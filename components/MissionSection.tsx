@@ -67,15 +67,15 @@ export default function MissionSection() {
             aria-labelledby="mission-heading"
         >
             <div className="container-custom">
-                {/* Swiss asymmetric balance - right-aligned to contrast left hero */}
-                <div className="max-w-5xl ml-auto">
+                {/* Swiss asymmetric balance - right-aligned on desktop */}
+                <div className="max-w-5xl lg:ml-auto">
                     <div className={cn(
                         "space-y-8",
                         isVisible && "fade-in"
                     )}>
                         {/* Section heading */}
                         <div className="space-y-4">
-                            <div className="h-0.5 w-12 bg-taupe-gold" />
+                            <div className="h-0.5 w-12 bg-coral-warm" />
                             <h2
                                 id="mission-heading"
                                 className="text-3xl md:text-5xl font-black text-navy-deep tracking-tight leading-tight max-w-3xl"
@@ -93,7 +93,7 @@ export default function MissionSection() {
                                 {MISSION_CONTENT.statement}
                             </p>
                             {MISSION_CONTENT.supportLine && (
-                                <p className="text-base md:text-lg text-slate/80 font-normal italic border-l-2 border-taupe-gold/30 pl-6">
+                                <p className="text-base md:text-lg text-slate/80 font-normal italic border-l-2 border-coral-warm/30 pl-6">
                                     {MISSION_CONTENT.supportLine}
                                 </p>
                             )}

@@ -255,14 +255,21 @@
   animation-delay: 4s;
 }
 
-/* Smooth scroll with spring physics */
+/* Enhanced scroll with momentum and spring physics */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
   /* Accounts for fixed nav */
 }
 
-/* Optional: Scroll snap for section-to-section navigation */
+/* Smooth momentum scrolling */
+@supports (-webkit-overflow-scrolling: touch) {
+  html {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Refined section-to-section snap */
 @media (min-width: 1024px) {
   body {
     scroll-snap-type: y proximity;
