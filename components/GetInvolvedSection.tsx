@@ -71,7 +71,7 @@ export default function GetInvolvedSection() {
     return (
         <section
             id="get-involved"
-            className="section-spacing bg-slate-50"
+            className="section-spacing-loose bg-slate-50"
             aria-labelledby="get-involved-heading"
         >
             <div className="container-standard">

@@ -13,7 +13,7 @@ export default function WhyItMattersSection() {
     return (
         <section
             id="why-it-matters"
-            className="section-spacing bg-white"
+            className="section-spacing-loose bg-white"
             aria-labelledby="why-heading"
         >
             <div className="container-standard">

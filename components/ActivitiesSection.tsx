@@ -28,7 +28,7 @@ export default function ActivitiesSection() {
     return (
         <section
             id="activities"
-            className="section-spacing bg-bg-surface-highlight"
+            className="section-spacing-standard bg-bg-surface-highlight"
             aria-labelledby="activities-heading"
         >
             <div className="container-standard">
@@ -48,7 +48,7 @@ export default function ActivitiesSection() {
                     {ACTIVITIES_CONTENT.activities.map((activity, index) => (
                         <div
                             key={activity.id}
-                            className="bg-white p-6 rounded-lg border border-slate-200 hover:border-blue-900 hover:shadow-lg transition-all duration-300 group"
+                            className="bg-white p-5 md:p-6 rounded-lg border border-slate-200 hover:border-blue-900 hover:shadow-lg transition-all duration-300 group"
                         >
                             <div className="flex flex-col h-full">
                                 {/* Icon + Index Row */}

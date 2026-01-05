@@ -8,6 +8,7 @@
  * 1. Sophistication: Deep, rich blues and stark whites.
  * 2. Swiss Precision: Tight tracking (-0.04em), sharp edges (0px radius), hard shadows.
  * 3. Authority: Massive contrast in type scale.
+ * 4. Rhythm: Tiered spacing for narrative pacing.
  */
 
 :root {
@@ -15,27 +16,19 @@
 
   --bg-page: #ffffff;
   --bg-surface: #f8fafc;
-  /* Slate 50 */
   --bg-surface-highlight: #f1f5f9;
-  /* Slate 100 */
 
   /* Text */
   --text-primary: #0f172a;
-  /* Slate 900 */
   --text-secondary: #475569;
-  /* Slate 600 */
   --text-tertiary: #94a3b8;
-  /* Slate 400 */
 
   /* Brand Tokens */
   --brand-navy: #0f172a;
-  /* Slate 900 */
 
   /* Primary Action */
   --brand-primary: #1e3a8a;
-  /* Blue 900 */
   --brand-primary-hover: #172554;
-  /* Blue 950 */
 
   --brand-accent: #eff6ff;
   --brand-accent-strong: #1e40af;
@@ -43,16 +36,22 @@
   --border-subtle: #e2e8f0;
   --border-strong: #1e3a8a;
 
-  /* --- SPACING & LAYOUT --- */
+  /* --- SPACING & LAYOUT (TIERED) --- */
   --max-width-wide: 1280px;
-  --max-width-text: 65ch;
+  --max-width-text: 70ch;
+  /* Increased from 65ch for better readability */
 
   --gutter-mobile: 1.25rem;
   --gutter-desktop: 2.5rem;
 
-  /* Vertical Rhythm - Tight */
-  --section-gap-mobile: 2rem;
-  --section-gap-desktop: 3.5rem;
+  /* Tiered Vertical Rhythm */
+  --section-gap-tight: 1.5rem;
+  --section-gap-standard: 2rem;
+  --section-gap-loose: 3rem;
+
+  --section-gap-tight-desktop: 2.5rem;
+  --section-gap-standard-desktop: 3.5rem;
+  --section-gap-loose-desktop: 5rem;
 
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
@@ -60,15 +59,15 @@
   --space-lg: 2rem;
   --space-xl: 3rem;
 
-  /* --- TYPOGRAPHY (Swiss Style) --- */
-  --leading-tight: 1;
-  /* Very tight, poster-like */
+  /* --- TYPOGRAPHY (Swiss Style - Refined) --- */
+  --leading-tight: 1.05;
+  /* Increased from 1 for better readability */
   --leading-snug: 1.2;
-  --leading-normal: 1.5;
+  --leading-normal: 1.6;
+  /* Increased from 1.5 */
 
   /* Swiss Layout Utilities */
   --radius-sharp: 0px;
-  /* Architectural/Swiss */
   --radius-subtle: 2px;
 }
 
@@ -85,7 +84,7 @@ body {
   line-height: var(--leading-normal);
 }
 
-/* Typography Scale - Swiss Grotesque Style */
+/* Typography Scale - Swiss Grotesque Style (Mobile-Optimized) */
 h1,
 h2,
 h3,
@@ -93,29 +92,40 @@ h4 {
   color: var(--text-primary);
   font-weight: 700;
   letter-spacing: -0.04em;
-  /* Tight tracking is key to Swiss style */
   line-height: var(--leading-tight);
 }
 
 h1 {
-  font-size: clamp(3.5rem, 7vw, 5.5rem);
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  /* Reduced mobile start */
   font-weight: 800;
 }
 
-/* Larger, punchier */
 h2 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(1.75rem, 5vw, 3.5rem);
+  /* Reduced from 4rem max */
+  margin-bottom: 2rem;
+  /* Increased from implicit */
+}
+
+@media (min-width: 768px) {
+  h2 {
+    margin-bottom: 2.5rem;
+  }
 }
 
 h3 {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 p {
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
+  /* Increased from 1.5rem */
   font-size: 1.125rem;
   letter-spacing: -0.01em;
+  max-width: var(--max-width-text);
+  /* Add readability constraint */
 }
 
 /* Eyebrow Label - understated */
@@ -147,15 +157,36 @@ p {
   }
 }
 
-.section-spacing {
-  padding-top: var(--section-gap-mobile);
-  padding-bottom: var(--section-gap-mobile);
+/* Tiered Section Spacing */
+.section-spacing-tight {
+  padding-top: var(--section-gap-tight);
+  padding-bottom: var(--section-gap-tight);
+}
+
+.section-spacing-standard {
+  padding-top: var(--section-gap-standard);
+  padding-bottom: var(--section-gap-standard);
+}
+
+.section-spacing-loose {
+  padding-top: var(--section-gap-loose);
+  padding-bottom: var(--section-gap-loose);
 }
 
 @media (min-width: 1024px) {
-  .section-spacing {
-    padding-top: var(--section-gap-desktop);
-    padding-bottom: var(--section-gap-desktop);
+  .section-spacing-tight {
+    padding-top: var(--section-gap-tight-desktop);
+    padding-bottom: var(--section-gap-tight-desktop);
+  }
+
+  .section-spacing-standard {
+    padding-top: var(--section-gap-standard-desktop);
+    padding-bottom: var(--section-gap-standard-desktop);
+  }
+
+  .section-spacing-loose {
+    padding-top: var(--section-gap-loose-desktop);
+    padding-bottom: var(--section-gap-loose-desktop);
   }
 }
 
@@ -168,9 +199,7 @@ p {
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  /* Snappy easing */
   border-radius: var(--radius-sharp);
-  /* SHARP EDGES */
   letter-spacing: -0.01em;
 }
 
@@ -183,9 +212,7 @@ p {
 .btn-primary:hover {
   background: var(--brand-primary-hover);
   transform: translateY(-2px);
-  /* Slight lift */
   box-shadow: 4px 4px 0px rgba(15, 23, 42, 0.2);
-  /* Brutalist hard shadow */
 }
 
 .btn-secondary {
@@ -198,7 +225,6 @@ p {
   border-color: var(--brand-primary);
   background: var(--bg-surface);
   box-shadow: 4px 4px 0px rgba(226, 232, 240, 1);
-  /* Hard shadow */
 }
 
 /* Card System - Swiss Clean */
@@ -213,7 +239,6 @@ p {
 .card-clean:hover {
   border-color: var(--brand-primary);
   box-shadow: 8px 8px 0px rgba(226, 232, 240, 0.5);
-  /* Hard shadow hint */
 }
 
 /* Animations */

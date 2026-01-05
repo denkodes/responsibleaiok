@@ -2,7 +2,16 @@
  * MAIN PAGE
  * 
  * Single-page landing site for Responsible AI OK.
- * Composes all sections into a cohesive experience.
+ * Composes all sections into a cohesive narrative experience.
+ * 
+ * NARRATIVE ARC:
+ * 1. Hero - First impression
+ * 2. Why It Matters - Immediate relevance
+ * 3. Mission - What we do about it
+ * 4. Activities - Proof of action
+ * 5. Team - Credibility
+ * 6. About - Organizational context
+ * 7. Get Involved - Action
  */
 
 import Navigation from "@/components/Navigation";
@@ -22,11 +31,11 @@ export default function Home() {
 
       <main>
         <HeroSection />
+        <WhyItMattersSection />
         <MissionSection />
         <ActivitiesSection />
-        <WhyItMattersSection />
-        <AboutSection />
         <TeamSection />
+        <AboutSection />
         <GetInvolvedSection />
       </main>
 

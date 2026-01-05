@@ -13,11 +13,11 @@ export default function AboutSection() {
     return (
         <section
             id="about"
-            className="section-spacing bg-white"
+            className="section-spacing-tight bg-white"
             aria-labelledby="about-heading"
         >
             <div className="container-standard">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
 
                     {/* Left Column: Heading */}
                     <div className="lg:col-span-4">

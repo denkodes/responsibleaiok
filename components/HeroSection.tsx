@@ -24,7 +24,7 @@ export default function HeroSection() {
     return (
         <section
             id="home"
-            className="relative min-h-[75vh] flex items-center overflow-hidden bg-white"
+            className="relative min-h-[80vh] flex items-center overflow-hidden bg-white"
             aria-label="Hero section"
         >
             {/* Background Grid - Very Subtle */}
@@ -33,7 +33,7 @@ export default function HeroSection() {
                 <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
             </div>
 
-            <div className="container-standard relative z-10 pt-36 pb-32">
+            <div className="container-standard relative z-10 pt-24 md:pt-36 pb-20 md:pb-24">
                 <div className="max-w-[1000px]">
                     {/* Eyebrow Label - Fixed Spacing and "Blink" Feel */}
                     <div

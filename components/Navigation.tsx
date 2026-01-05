@@ -42,7 +42,7 @@ export default function Navigation() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 isScrolled || isMobileMenuOpen
-                    ? "bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 shadow-sm"
+                    ? "bg-white/95 backdrop-blur-md border-b border-slate-200 py-2 shadow-md"
                     : "bg-transparent py-5"
             )}
             aria-label="Main navigation"
@@ -52,7 +52,7 @@ export default function Navigation() {
                 <Link
                     href="#home"
                     onClick={(e) => scrollToSection(e, "#home")}
-                    className="text-xl md:text-2xl font-black text-navy-900 tracking-tight flex items-center gap-2"
+                    className="text-2xl md:text-3xl font-black text-navy-900 tracking-tight flex items-center gap-2"
                 >
                     <div className={cn(
                         "w-6 h-1 rounded-full transition-colors",
@@ -68,14 +68,14 @@ export default function Navigation() {
                             <Link
                                 href={link.href}
                                 onClick={(e) => scrollToSection(e, link.href)}
-                                className="text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors tracking-wide"
+                                className="text-sm font-medium text-slate-600 hover:text-blue-900 transition-colors tracking-wide"
                             >
                                 {link.label}
                             </Link>
                         </li>
                     ))}
                     <li>
-                        <a href="#get-involved" onClick={(e) => scrollToSection(e, "#get-involved")} className="btn btn-primary text-xs py-2 px-4 shadow-none bg-blue-900 text-white hover:bg-blue-950 border-transparent">
+                        <a href="#get-involved" onClick={(e) => scrollToSection(e, "#get-involved")} className="btn btn-primary text-sm py-2.5 px-6 shadow-none bg-blue-900 text-white hover:bg-blue-950 border-transparent">
                             Get Involved
                         </a>
                     </li>
