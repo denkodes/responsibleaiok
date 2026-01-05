@@ -10,7 +10,7 @@
    ============================================ */
 export const SITE_METADATA = {
   title: "Responsible AI OK | Community-Rooted Responsible AI in Oklahoma",
-  description: "Responsible AI OK helps Oklahoma communities and institutions understand and adopt AI responsibly through events, workshops, education, and practical guidance.",
+  description: "Responsible AI OK builds AI governance capacity for Oklahoma nonprofits and civic organizations through education, workshops, and practical guidance. Seeking foundation partnerships to expand statewide impact.",
   url: "https://responsibleaiok.org",
   ogImage: "/og-image.png",
   contactEmail: "hello@responsibleaiok.org",

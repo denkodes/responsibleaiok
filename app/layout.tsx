@@ -65,6 +65,14 @@ export const metadata: Metadata = {
     "community engagement",
     "AI education",
     "AI policy",
+    "nonprofit AI support",
+    "AI capacity building",
+    "civic tech Oklahoma",
+    "AI governance training",
+    "community AI literacy",
+    "AI ethics education",
+    "grassroots AI safety",
+    "AI readiness nonprofits",
   ],
 
   // Author and creator information
@@ -192,18 +200,68 @@ export default function RootLayout({
               "@type": "Organization",
               name: ORG_INFO.name,
               alternateName: ORG_INFO.formerName,
+              foundingDate: "2024",
               url: SITE_METADATA.url,
               logo: `${SITE_METADATA.url}/logo.png`,
               description: SITE_METADATA.description,
+              areaServed: {
+                "@type": "State",
+                name: "Oklahoma",
+              },
+              knowsAbout: [
+                "AI Governance",
+                "AI Safety",
+                "Responsible AI",
+                "AI Ethics",
+                "Community AI Education",
+                "Nonprofit AI Support",
+              ],
               address: {
                 "@type": "PostalAddress",
                 addressRegion: "OK",
                 addressCountry: "US",
               },
               sameAs: [
-                // Add social media URLs when available
-                // "https://www.linkedin.com/company/responsible-ai-ok",
-                // "https://twitter.com/responsibleaiok",
+                "https://www.linkedin.com/company/aistulsa/",
+                "https://www.facebook.com/p/AI-Safety-Tulsa-61574217595795/",
+                "https://www.instagram.com/aistulsa/",
+              ],
+            }),
+          }}
+        />
+
+        {/* FAQ Schema for AI Search Engines */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "What is Responsible AI OK?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Responsible AI OK is a public interest initiative that helps Oklahoma nonprofits, civic organizations, and communities build AI governance capacity through workshops, education, and practical guidance.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Who should partner with Responsible AI OK?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Foundations supporting AI governance, nonprofits exploring AI adoption, civic organizations, educational institutions, and community groups in Oklahoma seeking responsible AI guidance.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "What services does Responsible AI OK provide?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "We provide community events, workshops and training, education and awareness programs, and AI governance guidance for nonprofits and civic organizations across Oklahoma.",
+                  },
+                },
               ],
             }),
           }}
