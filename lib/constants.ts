@@ -13,7 +13,7 @@ export const SITE_METADATA = {
   description: "Responsible AI OK helps Oklahoma communities and institutions understand and adopt AI responsibly through events, workshops, education, and practical guidance.",
   url: "https://responsibleaiok.org",
   ogImage: "/og-image.png",
-  contactEmail: "contact@responsibleaiok.org",
+  contactEmail: "hello@responsibleaiok.org",
 } as const;
 
 /* ============================================
@@ -197,8 +197,9 @@ export const FOOTER_CONTENT = {
   blurb: "Responsible AI OK builds responsible AI readiness in Oklahoma through events, workshops, education, and practical guidance.",
   contactEmail: SITE_METADATA.contactEmail,
   social: [
-    { platform: "LinkedIn", url: "#", icon: "linkedin" },
-    { platform: "Facebook", url: "#", icon: "facebook" },
+    { platform: "LinkedIn", url: "https://www.linkedin.com/company/aistulsa/", icon: "linkedin" },
+    { platform: "Facebook", url: "https://www.facebook.com/p/AI-Safety-Tulsa-61574217595795/", icon: "facebook" },
+    { platform: "Instagram", url: "https://www.instagram.com/aistulsa/", icon: "instagram" },
   ],
   copyright: `© ${new Date().getFullYear()} ${ORG_INFO.name}. All rights reserved.`,
 } as const;
