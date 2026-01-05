@@ -101,7 +101,7 @@ export default function ActivitiesSection() {
                             className={getGridSpan(index)}
                         >
                             <SpotlightCard className="h-full rounded-2xl md:rounded-3xl shadow-lg border-transparent bg-white/60 backdrop-blur-md">
-                                <div className="p-10 md:p-16 relative z-10 h-full flex flex-col">
+                                <div className="p-12 md:p-20 relative z-10 h-full flex flex-col">
                                     {/* Number Watermark */}
                                     <div className="absolute top-8 right-8 text-[8rem] font-black text-navy-deep/[0.03] select-none pointer-events-none tracking-[-0.1em]">
                                         0{index + 1}
