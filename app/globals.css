@@ -53,17 +53,18 @@
    ============================================ */
 :root {
   /* Fluid typography using clamp() - responsive without breakpoints */
-  /* Slightly bumped up for better readability and 'feel good' vibe */
-  --text-xs: clamp(0.8rem, 0.75rem + 0.25vw, 0.9rem);
-  --text-sm: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
-  --text-base: clamp(1.1rem, 1.05rem + 0.3vw, 1.25rem);
-  /* Increased base size */
-  --text-lg: clamp(1.25rem, 1.15rem + 0.4vw, 1.4rem);
-  --text-xl: clamp(1.4rem, 1.3rem + 0.6vw, 1.75rem);
-  --text-2xl: clamp(1.75rem, 1.6rem + 0.9vw, 2.25rem);
-  --text-3xl: clamp(2.25rem, 2rem + 1.5vw, 3.5rem);
-  --text-4xl: clamp(3rem, 2.5rem + 3vw, 4.5rem);
-  --text-5xl: clamp(3.5rem, 3rem + 4vw, 6rem);
+  /* Fluid typography - Balanced: Mobile friendly, Desktop refined (not massive) */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.85rem + 0.25vw, 1rem);
+  --text-base: clamp(1rem, 0.98rem + 0.25vw, 1.125rem);
+  /* Max 18px on desktop */
+  --text-lg: clamp(1.125rem, 1.1rem + 0.3vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.2rem + 0.4vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.4rem + 0.6vw, 2rem);
+  --text-3xl: clamp(2rem, 1.8rem + 1vw, 3rem);
+  --text-4xl: clamp(2.5rem, 2.2rem + 1.5vw, 3.75rem);
+  --text-5xl: clamp(3rem, 2.8rem + 2vw, 4.5rem);
+  /* Capped at 72px for balance */
 
   /* Line Heights - Generous for readability */
   /* Line Heights - Generous for readability */
@@ -114,8 +115,8 @@
   /* 80px */
   --space-24: 6rem;
   /* 96px */
-  --space-32: 10rem;
-  /* Increased for more 'luxury' whitespace */
+  --space-32: clamp(5rem, 8vh, 8rem);
+  /* Responsive vertical spacing */
   /* Content Width Constraints */
   --content-narrow: 42ch;
   /* Optimal readability for paragraphs */
@@ -130,19 +131,16 @@
    SHADOW SYSTEM - Soft, Navy-Tinted
    ============================================ */
 :root {
-  /* Multi-layer shadows for "Floating" effect */
-  --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.02);
-  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.03),
-    0 1px 3px rgba(15, 23, 42, 0.02);
-  --shadow-lg: 0 12px 24px rgba(15, 23, 42, 0.04),
-    0 4px 8px rgba(15, 23, 42, 0.02);
-  --shadow-xl: 0 24px 48px rgba(15, 23, 42, 0.06),
-    0 8px 16px rgba(15, 23, 42, 0.03);
-  --shadow-glass: 0 8px 32px 0 rgba(15, 23, 42, 0.08);
+  /* Tier-1 Shadow System */
+  --shadow-sm: 0 2px 4px rgba(17, 42, 70, 0.02), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  --shadow-md: 0 4px 8px -2px rgba(17, 42, 70, 0.06), 0 2px 4px -2px rgba(17, 42, 70, 0.03), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  --shadow-lg: 0 12px 24px -6px rgba(17, 42, 70, 0.08), 0 4px 8px -4px rgba(17, 42, 70, 0.04), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  --shadow-xl: 0 32px 64px -12px rgba(17, 42, 70, 0.12), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 
-  /* Hover state - premium lift */
-  --shadow-hover: 0 32px 64px rgba(15, 23, 42, 0.12),
-    0 8px 16px rgba(15, 23, 42, 0.04);
+  --shadow-glass: 0 8px 32px 0 rgba(74, 124, 143, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+
+  /* Hover state */
+  --shadow-hover: 0 32px 64px -12px rgba(74, 124, 143, 0.15), 0 16px 32px -8px rgba(17, 42, 70, 0.08), 0 0 0 1px rgba(74, 124, 143, 0.1);
 }
 
 /* ============================================
@@ -159,15 +157,17 @@
    ANIMATION UTILITIES - Subtle & Purposeful
    ============================================ */
 :root {
-  /* Easing curves - smooth, not bouncy */
-  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  /* Animation physics - Spring-like feel (Apple/EA style) */
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Bouncy but controlled */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Animation durations */
-  --duration-fast: 150ms;
-  --duration-normal: 250ms;
-  --duration-slow: 350ms;
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  /* Slightly slower for luxury feel */
+  --duration-slow: 700ms;
 }
 
 /* Fade-in animation for scroll-triggered elements */
@@ -488,10 +488,27 @@ a:focus-visible {
 }
 
 .btn-secondary:hover {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border-color: var(--heading);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -5px rgba(17, 42, 70, 0.1);
+}
+
+/* Hyper-premium glow effect for primary buttons */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s var(--ease-smooth);
+}
+
+.btn-primary:hover::after {
+  transform: translateX(100%);
 }
 
 .btn-full {

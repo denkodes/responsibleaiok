@@ -44,12 +44,12 @@ export default function HeroSection() {
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a03_1px,transparent_1px),linear-gradient(to_bottom,#0f172a03_1px,transparent_1px)] bg-[size:100px_100px]" />
             </div>
 
-            <div className="container-custom w-full relative z-10 pt-32 lg:pt-0">
+            <div className="container-custom w-full relative z-10 pt-48 lg:pt-56">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
                     {/* ============================================
               TEXT CONTENT - Institutional Precision
               ============================================ */}
-                    <div className="lg:col-span-11 space-y-12">
+                    <div className="lg:col-span-12 space-y-12 flex flex-col items-center text-center">
                         {/* Continuity Line Label - Refined Luxury */}
                         <div
                             className={cn(
@@ -65,7 +65,7 @@ export default function HeroSection() {
                             {HERO_CONTENT.kicker}
                         </div>
 
-                        <div className="space-y-10">
+                        <div className="space-y-10 max-w-5xl mx-auto">
                             {/* Organization Name - Award-Caliber Reveal */}
                             <h1
                                 className={cn(
@@ -78,12 +78,11 @@ export default function HeroSection() {
                             </h1>
 
                             {/* Value Proposition - High-End Editorial Style */}
-                            <div className="flex flex-col md:flex-row gap-8 items-start">
-                                <div className="h-20 w-[1px] bg-taupe-gold/40 hidden md:block mt-2"></div>
+                            <div className="flex flex-col items-center gap-8">
                                 <p
                                     className={cn(
                                         "text-lg sm:text-xl md:text-3xl text-slate/90 font-medium",
-                                        "leading-[1.4] max-w-3xl",
+                                        "leading-[1.4] max-w-3xl mx-auto",
                                         shouldAnimate && isVisible && "fade-in fade-in-delay-3"
                                     )}
                                 >
@@ -95,7 +94,7 @@ export default function HeroSection() {
                         {/* CTAs - Standardised Premium Buttons */}
                         <div
                             className={cn(
-                                "flex flex-wrap gap-4 pt-4",
+                                "flex flex-wrap justify-center gap-4 pt-4",
                                 shouldAnimate && isVisible && "fade-in fade-in-delay-4"
                             )}
                         >
