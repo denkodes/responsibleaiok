@@ -174,6 +174,15 @@ export default function RootLayout({
           }}
         />
 
+        {/* HubSpot Tracking Code */}
+        <script
+          type="text/javascript"
+          id="hs-script-loader"
+          async
+          defer
+          src="//js-na2.hs-scripts.com/242682784.js"
+        />
+
         {/* Structured Data (JSON-LD) for search engines */}
         <script
           type="application/ld+json"
