@@ -87,8 +87,8 @@ export const ACTIVITIES_CONTENT = {
     },
     {
       id: "guidance",
-      title: "Practical Guidance",
-      description: "Support for nonprofits and civic organizations exploring AI, including risk aware adoption guidance, basic governance practices, and decision support that fits real operational constraints.",
+      title: "AI Governance",
+      description: "Governance frameworks and decision-making structures for nonprofits and civic organizations adopting AI, including risk-aware policies, accountability practices, and oversight approaches that fit real operational constraints.",
       icon: "shield-check",
     },
   ],
