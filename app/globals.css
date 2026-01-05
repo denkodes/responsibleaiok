@@ -298,3 +298,178 @@ select:focus {
   --navy-deep: var(--brand-navy);
   --navy-900: var(--brand-navy);
 }
+
+/* ============================================
+   HUBSPOT FORM CUSTOM STYLING
+   ============================================ */
+
+/* Form Container */
+.hubspot-form-wrapper {
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Form Fields */
+.hubspot-form-wrapper .hs-form-field {
+  margin-bottom: 1.5rem;
+}
+
+.hubspot-form-wrapper .hs-form-field>label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Required field indicator */
+.hubspot-form-wrapper .hs-form-required {
+  color: #ef4444;
+}
+
+/* Input Fields */
+.hubspot-form-wrapper .hs-input {
+  width: 100%;
+  background: #f8fafc;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: var(--font-inter), sans-serif;
+  color: var(--text-primary);
+  transition: all 0.15s ease;
+}
+
+.hubspot-form-wrapper .hs-input:focus {
+  background: #ffffff;
+  border-color: var(--brand-primary);
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(8, 145, 178, 0.1),
+    0 0 20px rgba(8, 145, 178, 0.2);
+}
+
+/* Textarea */
+.hubspot-form-wrapper textarea.hs-input {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Select Dropdown */
+.hubspot-form-wrapper select.hs-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+/* Error State */
+.hubspot-form-wrapper .hs-error-msgs {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+}
+
+.hubspot-form-wrapper .hs-error-msg {
+  font-size: 0.875rem;
+  color: #ef4444;
+  margin-top: 0.25rem;
+}
+
+.hubspot-form-wrapper .error .hs-input,
+.hubspot-form-wrapper .hs-input.error {
+  border-color: #ef4444;
+}
+
+/* Submit Button */
+.hubspot-form-wrapper .hs-button {
+  width: 100%;
+  background: var(--brand-cta);
+  color: #ffffff;
+  border: 3px solid var(--brand-cta);
+  padding: 1rem 2.5rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  font-family: var(--font-inter), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 4px 4px 0px rgba(8, 145, 178, 0.2);
+  margin-top: 1.5rem;
+}
+
+.hubspot-form-wrapper .hs-button:hover {
+  background: var(--brand-cta-hover);
+  border-color: var(--brand-cta-hover);
+  transform: translate(-2px, -2px);
+  box-shadow:
+    6px 6px 0px rgba(8, 145, 178, 0.3),
+    0 0 20px rgba(8, 145, 178, 0.4),
+    0 0 40px rgba(8, 145, 178, 0.2);
+}
+
+.hubspot-form-wrapper .hs-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Form Actions Container */
+.hubspot-form-wrapper .hs-submit {
+  margin-top: 1.5rem;
+}
+
+.hubspot-form-wrapper .actions {
+  text-align: left;
+}
+
+/* Success Message */
+.hubspot-form-wrapper .submitted-message {
+  background: #ffffff;
+  border: 1px solid rgba(30, 58, 138, 0.2);
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+/* Field Groups (for multi-column layouts) */
+.hubspot-form-wrapper .hs-form-field.hs-fieldtype-text,
+.hubspot-form-wrapper .hs-form-field.hs-fieldtype-email {
+  display: block;
+}
+
+/* Privacy/Legal Text */
+.hubspot-form-wrapper .hs-richtext {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+}
+
+.hubspot-form-wrapper .hs-richtext a {
+  color: var(--brand-primary);
+  text-decoration: underline;
+}
+
+/* Remove HubSpot branding if present */
+.hubspot-form-wrapper .hs-form-booleancheckbox-display {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.hubspot-form-wrapper .hs-form-booleancheckbox-display input[type="checkbox"] {
+  margin-top: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+/* Loading State */
+.hubspot-form-wrapper .hs-form.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
