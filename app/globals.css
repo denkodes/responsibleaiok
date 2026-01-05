@@ -52,28 +52,38 @@
    TYPOGRAPHY SCALE - Swiss Precision
    ============================================ */
 :root {
-  /* Fluid typography using clamp() - responsive without breakpoints */
-  /* Fluid typography - Balanced: Mobile friendly, Desktop refined (not massive) */
-  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-  --text-sm: clamp(0.875rem, 0.85rem + 0.25vw, 1rem);
-  --text-base: clamp(1rem, 0.98rem + 0.25vw, 1.125rem);
-  /* Max 18px on desktop */
-  --text-lg: clamp(1.125rem, 1.1rem + 0.3vw, 1.25rem);
-  --text-xl: clamp(1.25rem, 1.2rem + 0.4vw, 1.5rem);
-  --text-2xl: clamp(1.5rem, 1.4rem + 0.6vw, 2rem);
-  --text-3xl: clamp(2rem, 1.8rem + 1vw, 3rem);
-  --text-4xl: clamp(2.5rem, 2.2rem + 1.5vw, 3.75rem);
-  --text-5xl: clamp(3rem, 2.8rem + 2vw, 4.5rem);
-  /* Capped at 72px for balance */
+  /* Swiss Typography Scale - Conservative & Professional */
+  /* Based on 16px base, modular scale of 1.25 (major third) */
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+  /* 12-13px */
+  --text-sm: clamp(0.875rem, 0.85rem + 0.125vw, 0.9375rem);
+  /* 14-15px */
+  --text-base: clamp(1rem, 0.98rem + 0.1vw, 1rem);
+  /* 16px fixed */
+  --text-lg: clamp(1.125rem, 1.1rem + 0.125vw, 1.125rem);
+  /* 18px */
+  --text-xl: clamp(1.25rem, 1.2rem + 0.25vw, 1.375rem);
+  /* 20-22px */
+  --text-2xl: clamp(1.5rem, 1.4rem + 0.5vw, 1.875rem);
+  /* 24-30px */
+  --text-3xl: clamp(2rem, 1.8rem + 1vw, 2.5rem);
+  /* 32-40px */
+  --text-4xl: clamp(2.5rem, 2.25rem + 1.25vw, 3rem);
+  /* 40-48px max */
+  --text-5xl: clamp(3rem, 2.75rem + 1.25vw, 3.5rem);
+  /* 48-56px max */
 
-  /* Line Heights - Generous for readability */
-  /* Line Heights - Generous for readability */
-  --leading-tight: 1.15;
-  --leading-snug: 1.35;
-  --leading-normal: 1.6;
-  --leading-relaxed: 1.75;
-  /* Easier to read blocks of text */
-  --leading-loose: 2;
+  /* Line Heights - Swiss Precision */
+  --leading-tight: 1.1;
+  /* Headlines only */
+  --leading-snug: 1.25;
+  /* Subheadings */
+  --leading-normal: 1.5;
+  /* Body text standard */
+  --leading-relaxed: 1.6;
+  /* Long-form content */
+  --leading-loose: 1.75;
+  /* Special cases */
 
   /* Letter Spacing - Swiss micro-typography refined */
   --tracking-tight: -0.04em;
@@ -115,8 +125,8 @@
   /* 80px */
   --space-24: 6rem;
   /* 96px */
-  --space-32: clamp(5rem, 8vh, 8rem);
-  /* Responsive vertical spacing */
+  --space-32: clamp(4rem, 6vh, 6rem);
+  /* Responsive section spacing - Swiss restraint */
   /* Content Width Constraints */
   --content-narrow: 42ch;
   /* Optimal readability for paragraphs */

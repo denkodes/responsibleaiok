@@ -44,12 +44,12 @@ export default function HeroSection() {
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a03_1px,transparent_1px),linear-gradient(to_bottom,#0f172a03_1px,transparent_1px)] bg-[size:100px_100px]" />
             </div>
 
-            <div className="container-custom w-full relative z-10 pt-48 lg:pt-56">
+            <div className="container-custom w-full relative z-10 pt-36 lg:pt-40">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
                     {/* ============================================
               TEXT CONTENT - Institutional Precision
               ============================================ */}
-                    <div className="lg:col-span-12 space-y-12 flex flex-col items-center text-center">
+                    <div className="lg:col-span-10 space-y-8">
                         {/* Continuity Line Label - Refined Luxury */}
                         <div
                             className={cn(
@@ -65,12 +65,12 @@ export default function HeroSection() {
                             {HERO_CONTENT.kicker}
                         </div>
 
-                        <div className="space-y-10 max-w-5xl mx-auto">
+                        <div className="space-y-6">
                             {/* Organization Name - Award-Caliber Reveal */}
                             <h1
                                 className={cn(
-                                    "text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black",
-                                    "text-navy-deep leading-[0.85] tracking-tight",
+                                    "text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black",
+                                    "text-navy-deep leading-[1.1] tracking-tight max-w-4xl",
                                     shouldAnimate && isVisible && "animate-reveal"
                                 )}
                             >
@@ -78,11 +78,12 @@ export default function HeroSection() {
                             </h1>
 
                             {/* Value Proposition - High-End Editorial Style */}
-                            <div className="flex flex-col items-center gap-8">
+                            <div className="flex flex-col md:flex-row gap-6 items-start">
+                                <div className="h-16 w-[1px] bg-taupe-gold/40 hidden md:block mt-1"></div>
                                 <p
                                     className={cn(
-                                        "text-lg sm:text-xl md:text-3xl text-slate/90 font-medium",
-                                        "leading-[1.4] max-w-3xl mx-auto",
+                                        "text-base sm:text-lg md:text-xl text-slate/90 font-normal",
+                                        "leading-relaxed max-w-2xl",
                                         shouldAnimate && isVisible && "fade-in fade-in-delay-3"
                                     )}
                                 >
@@ -94,7 +95,7 @@ export default function HeroSection() {
                         {/* CTAs - Standardised Premium Buttons */}
                         <div
                             className={cn(
-                                "flex flex-wrap justify-center gap-4 pt-4",
+                                "flex flex-wrap gap-4 pt-2",
                                 shouldAnimate && isVisible && "fade-in fade-in-delay-4"
                             )}
                         >
