@@ -83,7 +83,7 @@ export default function AboutSection() {
                         </div>
 
                         {/* Paragraphs with high-end magazine styling */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
                             <div className="space-y-6">
                                 {ABOUT_CONTENT.paragraphs.slice(0, 2).map((paragraph, index) => (
                                     <p

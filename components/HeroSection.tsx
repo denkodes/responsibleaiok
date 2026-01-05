@@ -44,12 +44,12 @@ export default function HeroSection() {
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a03_1px,transparent_1px),linear-gradient(to_bottom,#0f172a03_1px,transparent_1px)] bg-[size:100px_100px]" />
             </div>
 
-            <div className="container-custom w-full relative z-10 pt-36 lg:pt-40">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
+            <div className="container-custom w-full relative z-10 pt-32 lg:pt-36">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
                     {/* ============================================
               TEXT CONTENT - Institutional Precision
               ============================================ */}
-                    <div className="lg:col-span-10 space-y-8">
+                    <div className="lg:col-span-10 space-y-6">
                         {/* Continuity Line Label - Refined Luxury */}
                         <div
                             className={cn(
