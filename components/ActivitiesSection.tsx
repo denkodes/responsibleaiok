@@ -76,7 +76,7 @@ export default function ActivitiesSection() {
 
                 {/* HEADLINE */}
                 <FadeIn direction="up" duration={0.6}>
-                    <div className="max-w-4xl mx-auto text-center mb-16 space-y-5">
+                    <div className="max-w-4xl mx-auto text-center mb-12 space-y-4">
                         <h2
                             id="activities-heading"
                             className="text-3xl md:text-5xl font-black text-navy-deep leading-tight tracking-tight"
@@ -90,7 +90,7 @@ export default function ActivitiesSection() {
                 </FadeIn>
 
                 {/* GRID WITH STAGGERED REVEAL & SPOTLIGHT CARDS */}
-                <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
+                <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8">
                     {ACTIVITIES_CONTENT.activities.map((activity, index) => (
                         <motion.div
                             key={activity.id}
@@ -127,7 +127,7 @@ export default function ActivitiesSection() {
 
                 {/* CLOSING NOTE */}
                 <FadeIn delay={0.4} direction="up">
-                    <div className="mt-16 max-w-3xl mx-auto text-center">
+                    <div className="mt-12 max-w-3xl mx-auto text-center">
                         <p className="text-lg text-slate/90 leading-relaxed font-normal">
                             {ACTIVITIES_CONTENT.closingLine}
                         </p>

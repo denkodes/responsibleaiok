@@ -70,7 +70,7 @@ export default function MissionSection() {
                 {/* Swiss asymmetric balance - right-aligned on desktop */}
                 <div className="max-w-5xl lg:ml-auto">
                     <div className={cn(
-                        "space-y-8 flex flex-col lg:items-end lg:text-right",
+                        "space-y-6 flex flex-col lg:items-end lg:text-right",
                         isVisible && "fade-in"
                     )}>
                         {/* Section heading */}
@@ -86,7 +86,7 @@ export default function MissionSection() {
 
                         {/* Mission statement - natural wrap */}
                         <div className={cn(
-                            "max-w-3xl space-y-4",
+                            "max-w-4xl space-y-4",
                             isVisible && "fade-in fade-in-delay-1"
                         )}>
                             <p className="text-lg md:text-xl text-navy-charcoal font-normal leading-relaxed">

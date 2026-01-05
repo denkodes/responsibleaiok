@@ -417,16 +417,16 @@ a:focus-visible {
   }
 }
 
-/* Section padding - generous modern spacing */
+/* Section padding - balanced professional spacing */
 .section-padding {
-  padding-top: var(--space-32);
-  padding-bottom: var(--space-32);
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
 }
 
 @media (min-width: 768px) {
   .section-padding {
-    padding-top: clamp(6rem, 10vh, 8rem);
-    padding-bottom: clamp(6rem, 10vh, 8rem);
+    padding-top: clamp(4rem, 6vh, 6rem);
+    padding-bottom: clamp(4rem, 6vh, 6rem);
   }
 }
 
