@@ -67,52 +67,33 @@ export default function MissionSection() {
             aria-labelledby="mission-heading"
         >
             <div className="container-custom">
-                {/* ============================================
-            CENTERED CONTENT CONTAINER
-            ============================================
-            
-            Swiss principle: Centered layout with breathing room
-            Max-width ensures optimal readability
-            ============================================ */}
-                <div className="relative max-w-4xl mx-auto">
-                    <div className="relative z-10 space-y-12 text-center">
-                        {/* ============================================
-                  SECTION HEADING
-                  ============================================ */}
-                        <div className="space-y-6">
+                {/* Swiss asymmetric layout - left-aligned, balanced */}
+                <div className="max-w-5xl">
+                    <div className={cn(
+                        "space-y-8",
+                        isVisible && "fade-in"
+                    )}>
+                        {/* Section heading */}
+                        <div className="space-y-4">
+                            <div className="h-0.5 w-12 bg-taupe-gold" />
                             <h2
                                 id="mission-heading"
-                                className={cn(
-                                    "text-3xl md:text-5xl font-black text-navy-deep tracking-tight",
-                                    isVisible && "fade-in"
-                                )}
+                                className="text-3xl md:text-5xl font-black text-navy-deep tracking-tight leading-tight max-w-3xl"
                             >
                                 {MISSION_CONTENT.heading}
                             </h2>
-                            <div className={cn(
-                                "h-[2px] w-12 bg-taupe-gold mx-auto transition-all duration-1000",
-                                isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
-                            )} />
                         </div>
 
-                        {/* ============================================
-                  MISSION STATEMENT
-                  ============================================ */}
+                        {/* Mission statement - natural wrap */}
                         <div className={cn(
-                            "max-w-3xl mx-auto",
+                            "max-w-3xl space-y-4",
                             isVisible && "fade-in fade-in-delay-1"
                         )}>
-                            <p
-                                className="text-lg md:text-xl text-navy-charcoal font-normal leading-relaxed tracking-normal"
-                                style={{ maxWidth: "32ch", margin: "0 auto" }}
-                            >
+                            <p className="text-lg md:text-xl text-navy-charcoal font-normal leading-relaxed">
                                 {MISSION_CONTENT.statement}
                             </p>
                             {MISSION_CONTENT.supportLine && (
-                                <p
-                                    className="text-base md:text-lg text-slate/80 font-normal mt-6 italic"
-                                    style={{ maxWidth: "32ch", margin: "1.5rem auto 0" }}
-                                >
+                                <p className="text-base md:text-lg text-slate/80 font-normal italic border-l-2 border-taupe-gold/30 pl-6">
                                     {MISSION_CONTENT.supportLine}
                                 </p>
                             )}
