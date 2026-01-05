@@ -112,7 +112,7 @@ export const ABOUT_CONTENT = {
   paragraphs: [
     "Responsible AI OK is a public interest initiative rooted in Oklahoma. We bring people together across community, nonprofit, civic, and education contexts to build responsible AI readiness that reflects local needs and values while staying connected to national and global work.",
     "We previously operated as AI Safety Tulsa and are continuing that mission under Responsible AI OK.",
-    "While currently volunteer-led, we are delivering immediate impact through our programs. We are actively building partnerships and fundraising to establish a permanently staffed institution that can sustain and expand this critical work for Oklahoma's future.",
+    "While currently volunteer-led, we are delivering immediate impact through our programs, collaboration, and partnership. We are actively fundraising to establish a permanently staffed institution that can sustain and expand this critical work for Oklahoma's future.",
   ],
   fundingLine: null,
 } as const;
