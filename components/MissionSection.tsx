@@ -70,11 +70,11 @@ export default function MissionSection() {
                 {/* Swiss asymmetric balance - right-aligned on desktop */}
                 <div className="max-w-5xl lg:ml-auto">
                     <div className={cn(
-                        "space-y-8",
+                        "space-y-8 flex flex-col lg:items-end lg:text-right",
                         isVisible && "fade-in"
                     )}>
                         {/* Section heading */}
-                        <div className="space-y-4">
+                        <div className="space-y-4 flex flex-col lg:items-end">
                             <div className="h-0.5 w-12 bg-coral-warm" />
                             <h2
                                 id="mission-heading"
@@ -93,7 +93,7 @@ export default function MissionSection() {
                                 {MISSION_CONTENT.statement}
                             </p>
                             {MISSION_CONTENT.supportLine && (
-                                <p className="text-base md:text-lg text-slate/80 font-normal italic border-l-2 border-coral-warm/30 pl-6">
+                                <p className="text-base md:text-lg text-slate/80 font-normal italic border-l-2 lg:border-l-0 lg:border-r-2 border-coral-warm/30 pl-6 lg:pl-0 lg:pr-6">
                                     {MISSION_CONTENT.supportLine}
                                 </p>
                             )}

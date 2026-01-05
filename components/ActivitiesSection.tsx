@@ -198,18 +198,16 @@ export default function ActivitiesSection() {
                     })}
                 </div>
 
-                {/* Professional closing note with generous spacing */}
+                {/* Professional closing note - Centered to match header */}
                 <div
                     className={cn(
-                        "mt-24 max-w-3xl",
+                        "mt-16 max-w-3xl mx-auto text-center",
                         isVisible && "fade-in fade-in-delay-4"
                     )}
                 >
-                    <div className="pl-6 border-l-2 border-coral-warm/30">
-                        <p className="text-lg text-slate/90 leading-relaxed font-normal">
-                            {ACTIVITIES_CONTENT.closingLine}
-                        </p>
-                    </div>
+                    <p className="text-lg text-slate/90 leading-relaxed font-normal">
+                        {ACTIVITIES_CONTENT.closingLine}
+                    </p>
                 </div>
             </div>
         </section>
