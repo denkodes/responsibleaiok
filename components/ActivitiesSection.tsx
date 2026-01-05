@@ -129,7 +129,7 @@ export default function ActivitiesSection() {
                 {/* ============================================
             SECTION HEADER
             ============================================ */}
-                <div className="max-w-4xl mx-auto text-center mb-20 space-y-6">
+                <div className="max-w-4xl mx-auto text-center mb-16 space-y-5">
                     <h2
                         id="activities-heading"
                         className={cn(
@@ -149,10 +149,8 @@ export default function ActivitiesSection() {
                     </p>
                 </div>
 
-                {/* ============================================
-            ASYMMETRIC GRID
-            ============================================ */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+                {/* Asymmetric grid with generous spacing */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
                     {ACTIVITIES_CONTENT.activities.map((activity, index) => {
                         const gridSpans = [
                             "lg:col-span-12 xl:col-span-7",

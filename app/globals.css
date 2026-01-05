@@ -186,7 +186,7 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(20px);
   }
 
   to {
@@ -233,7 +233,7 @@
 }
 
 .animate-reveal {
-  animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-blob {
@@ -248,6 +248,25 @@
   animation-delay: 4s;
 }
 
+/* Smooth scroll with spring physics */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  /* Accounts for fixed nav */
+}
+
+/* Optional: Scroll snap for section-to-section navigation */
+@media (min-width: 1024px) {
+  body {
+    scroll-snap-type: y proximity;
+  }
+
+  section {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
+}
+
 /* Respect user's motion preferences - ACCESSIBILITY FIRST */
 @media (prefers-reduced-motion: reduce) {
 
@@ -257,6 +276,7 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
