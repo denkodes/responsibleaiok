@@ -158,6 +158,23 @@ export default function RootLayout({
         Helps Google understand our organization
       */}
       <head>
+        {/* Google Analytics */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-5QEKF3S811"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-5QEKF3S811');
+            `,
+          }}
+        />
+
+        {/* Structured Data (JSON-LD) for search engines */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
