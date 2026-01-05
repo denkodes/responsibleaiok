@@ -164,7 +164,7 @@ export default function ActivitiesSection() {
                                 key={activity.id}
                                 className={cn(
                                     gridSpans[index],
-                                    "relative p-8 md:p-12 rounded-3xl glass-card shadow-lg",
+                                    "relative p-10 md:p-16 rounded-3xl glass-card shadow-lg",
                                     "transition-all duration-700 ease-smooth group overflow-hidden",
                                     "hover:shadow-hover hover:-translate-y-3",
                                     isVisible && `fade-in fade-in-delay-${index + 2}`
@@ -198,22 +198,18 @@ export default function ActivitiesSection() {
                     })}
                 </div>
 
-                {/* ============================================
-            EXPLANATORY NOTE
-            ============================================
-            
-            Clarifies that these are "activities" not "programs"
-            to allow flexibility as organization evolves.
-            ============================================ */}
+                {/* Professional closing note with subtle accent */}
                 <div
                     className={cn(
-                        "mt-12 text-center",
+                        "mt-16 max-w-3xl",
                         isVisible && "fade-in fade-in-delay-4"
                     )}
                 >
-                    <p className="text-sm text-slate italic max-w-2xl mx-auto">
-                        {ACTIVITIES_CONTENT.closingLine}
-                    </p>
+                    <div className="pl-6 border-l-2 border-taupe-gold/30">
+                        <p className="text-base text-slate/80 leading-relaxed">
+                            {ACTIVITIES_CONTENT.closingLine}
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
