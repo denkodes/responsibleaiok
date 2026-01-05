@@ -57,7 +57,7 @@ export const HERO_CONTENT = {
 export const MISSION_CONTENT = {
   heading: "Our Mission",
   statement: "Responsible AI OK supports Oklahoma as artificial intelligence becomes part of everyday work and public life. We focus on practical readiness. We help nonprofits, civic organizations, students, and community members build baseline AI literacy, understand real world risks, and make informed choices about responsible use.",
-  supportLine: "We prioritize public benefit, clarity, and real community needs over hype.",
+  supportLine: "Our work is grounded in a simple belief: technology must serve the people and communities we call home.",
 } as const;
 
 /* ============================================
