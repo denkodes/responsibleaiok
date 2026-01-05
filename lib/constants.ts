@@ -118,13 +118,39 @@ export const ABOUT_CONTENT = {
 } as const;
 
 /* ============================================
+   TEAM SECTION (Added)
+   ============================================ */
+export const TEAM_CONTENT = {
+  heading: "Our Team",
+  subheading: "Community leaders and technical experts building a responsible future.",
+  members: [
+    {
+      name: "Position Pending",
+      role: "Board Member",
+      bio: "This position is currently being finalized for the initial board formation.",
+      image: "",
+    },
+    {
+      name: "Position Pending",
+      role: "Board Member",
+      bio: "This position is currently being finalized for the initial board formation.",
+      image: "",
+    },
+    {
+      name: "Position Pending",
+      role: "Board Member",
+      bio: "This position is currently being finalized for the initial board formation.",
+      image: "",
+    },
+  ],
+} as const;
+
+/* ============================================
    GET INVOLVED SECTION
    ============================================ */
 export const GET_INVOLVED_CONTENT = {
   heading: "Get Involved",
   subheading: "Join our community",
-
-  // Form fields configuration
   form: {
     fields: {
       firstName: {
@@ -171,13 +197,10 @@ export const FOOTER_CONTENT = {
   organizationName: ORG_INFO.name,
   blurb: "Responsible AI OK builds responsible AI readiness in Oklahoma through events, workshops, education, and practical guidance.",
   contactEmail: SITE_METADATA.contactEmail,
-
-  // Social media placeholders
   social: [
     { platform: "LinkedIn", url: "#", icon: "linkedin" },
     { platform: "Twitter", url: "#", icon: "twitter" },
   ],
-
   copyright: `© ${new Date().getFullYear()} ${ORG_INFO.name}. All rights reserved.`,
 } as const;
 

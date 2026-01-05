@@ -1,117 +1,38 @@
 /**
  * NAVIGATION COMPONENT
  * 
- * Sticky navigation with scroll tracking and glassmorphism effect.
- * 
- * Features:
- * - Active section highlighting (Intersection Observer)
- * - Smooth scroll to sections
- * - Mobile hamburger menu (visible only on narrow screens)
- * - Desktop horizontal menu (visible on md+)
- * - Accessibility-first (keyboard navigation, ARIA labels, focus rings)
+ * Theme: Deep Institutional
+ * Refactored to match the new Navy/Indigo palette.
  */
 
 "use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { NAV_LINKS, ORG_INFO } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export default function Navigation() {
-    // State for mobile menu toggle
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-    // State for scroll position (adds glass effect when scrolled)
     const [isScrolled, setIsScrolled] = useState(false);
 
-    // State for tracking which section is currently in view
-    const [activeSection, setActiveSection] = useState("home");
-
-    /* ============================================
-       SCROLL DETECTION
-       ============================================ */
     useEffect(() => {
         const handleScroll = () => {
-            // If scrolled more than 20px, add glass effect
-            setIsScrolled(window.scrollY > 20);
+            // Show background slightly earlier
+            setIsScrolled(window.scrollY > 0);
         };
-
         window.addEventListener("scroll", handleScroll);
-
-        // Cleanup: remove event listener when component unmounts
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    /* ============================================
-       ACTIVE SECTION TRACKING
-       ============================================ */
-    useEffect(() => {
-        // Get all section elements
-        const sections = NAV_LINKS.map((link) => {
-            const id = link.href.replace("#", "");
-            return document.getElementById(id);
-        }).filter(Boolean); // Remove null values
-
-        // Intersection Observer configuration
-        const observerOptions = {
-            // Trigger when section is 20% visible
-            threshold: 0.2,
-            // Offset from top (accounts for nav height)
-            rootMargin: "-80px 0px -80% 0px",
-        };
-
-        // Callback when section visibility changes
-        const observerCallback = (entries: IntersectionObserverEntry[]) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    // Update active section when it becomes visible
-                    setActiveSection(entry.target.id);
-                }
-            });
-        };
-
-        // Create observer
-        const observer = new IntersectionObserver(
-            observerCallback,
-            observerOptions
-        );
-
-        // Observe all sections
-        sections.forEach((section) => {
-            if (section) observer.observe(section);
-        });
-
-        // Cleanup: stop observing when component unmounts
-        return () => {
-            sections.forEach((section) => {
-                if (section) observer.unobserve(section);
-            });
-        };
-    }, []);
-
-    /* ============================================
-       SMOOTH SCROLL HANDLER
-       ============================================ */
-    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
-
         const targetId = href.replace("#", "");
-        const targetElement = document.getElementById(targetId);
-
-        if (targetElement) {
-            // Calculate position with offset for fixed nav
+        const el = document.getElementById(targetId);
+        if (el) {
             const navHeight = 80;
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - navHeight;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth",
-            });
-
-            // Close mobile menu after navigation
+            const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+            window.scrollTo({ top, behavior: "smooth" });
             setIsMobileMenuOpen(false);
         }
     };
@@ -119,143 +40,81 @@ export default function Navigation() {
     return (
         <nav
             className={cn(
-                // Base styles
-                "fixed top-0 left-0 right-0 z-50",
-                "transition-all duration-300 ease-smooth",
-
-                // Conditional glassmorphism when scrolled OR mobile menu open
+                "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 isScrolled || isMobileMenuOpen
-                    ? "glass-nav shadow-md border-b border-gray-border"
-                    : "bg-transparent py-4"
+                    ? "bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 shadow-sm"
+                    : "bg-transparent py-5"
             )}
             aria-label="Main navigation"
         >
-            <div className="container-custom h-full">
-                <div className="flex items-center justify-between h-20 md:h-24 px-4 md:px-0">
-                    {/* ============================================
-              LOGO / ORGANIZATION NAME
-              ============================================ */}
-                    <Link
-                        href="#home"
-                        onClick={(e) => handleNavClick(e, "#home")}
-                        className="text-2xl font-black text-navy-deep hover:text-teal-muted transition-all duration-300 tracking-[-0.05em] flex items-center gap-2 focus-visible:outline-teal-muted rounded-md px-2 -ml-2"
-                        aria-label="Responsible AI OK home"
-                    >
-                        <div className="w-8 h-1 bg-teal-muted rounded-full"></div>
-                        {ORG_INFO.name}
-                    </Link>
-
-                    {/* ============================================
-              DESKTOP NAVIGATION LINKS (Visible md+)
-              ============================================ */}
-                    <ul className="hidden md:flex items-center gap-8 lg:gap-10">
-                        {NAV_LINKS.map((link) => {
-                            const isActive = activeSection === link.href.replace("#", "");
-
-                            return (
-                                <li key={link.href} className="relative">
-                                    <Link
-                                        href={link.href}
-                                        onClick={(e) => handleNavClick(e, link.href)}
-                                        className={cn(
-                                            // Base styles
-                                            "text-sm font-semibold transition-all duration-300",
-                                            "hover:text-teal-warm tracking-wide py-2 relative z-10",
-                                            "focus-visible:outline-teal-warm focus-visible:outline-offset-4 rounded-sm",
-
-                                            // Text color change
-                                            isActive
-                                                ? "text-teal-warm"
-                                                : "text-slate"
-                                        )}
-                                        aria-current={isActive ? "page" : undefined}
-                                    >
-                                        {link.label}
-                                        {isActive && (
-                                            <motion.div
-                                                layoutId="activeTabBadge"
-                                                className="absolute -bottom-1 left-0 right-0 h-0.5 bg-teal-warm rounded-full"
-                                                transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                                            />
-                                        )}
-                                    </Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
-
-                    {/* ============================================
-              MOBILE MENU BUTTON (Visible sm only)
-              ============================================ */}
-                    <button
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="md:hidden p-4 -mr-4 text-navy-deep hover:text-teal-muted transition-colors focus-visible:outline-teal-muted rounded-md"
-                        aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-                        aria-expanded={isMobileMenuOpen}
-                        aria-controls="mobile-menu"
-                    >
-                        <div className="w-6 h-5 flex flex-col justify-between relative">
-                            <span
-                                className={cn(
-                                    "block h-0.5 w-full bg-current transform transition-all duration-300 origin-center absolute top-0",
-                                    isMobileMenuOpen ? "rotate-45 top-2.5" : "top-0"
-                                )}
-                            />
-                            <span
-                                className={cn(
-                                    "block h-0.5 w-full bg-current transform transition-all duration-300 absolute top-2.5",
-                                    isMobileMenuOpen ? "opacity-0" : "opacity-100"
-                                )}
-                            />
-                            <span
-                                className={cn(
-                                    "block h-0.5 w-full bg-current transform transition-all duration-300 origin-center absolute top-5",
-                                    isMobileMenuOpen ? "-rotate-45 top-2.5" : "top-5"
-                                )}
-                            />
-                        </div>
-                    </button>
-                </div>
-
-                {/* ============================================
-            MOBILE MENU DROPDOWN
-            ============================================ */}
-                <div
-                    id="mobile-menu"
-                    className={cn(
-                        "md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white/95 backdrop-blur-md absolute left-0 right-0 border-b border-gray-border/50 shadow-lg",
-                        isMobileMenuOpen
-                            ? "max-h-[80vh] opacity-100 py-6"
-                            : "max-h-0 opacity-0 py-0"
-                    )}
+            <div className="container-standard flex items-center justify-between">
+                {/* Logo */}
+                <Link
+                    href="#home"
+                    onClick={(e) => scrollToSection(e, "#home")}
+                    className="text-xl md:text-2xl font-black text-navy-900 tracking-tight flex items-center gap-2"
                 >
-                    <ul className="flex flex-col container-custom space-y-2">
-                        {NAV_LINKS.map((link) => {
-                            const isActive = activeSection === link.href.replace("#", "");
+                    <div className={cn(
+                        "w-6 h-1 rounded-full transition-colors",
+                        isScrolled ? "bg-blue-900" : "bg-blue-800"
+                    )}></div>
+                    {ORG_INFO.name}
+                </Link>
 
-                            return (
-                                <li key={link.href}>
-                                    <Link
-                                        href={link.href}
-                                        onClick={(e) => handleNavClick(e, link.href)}
-                                        className={cn(
-                                            "block py-4 text-lg font-bold transition-colors w-full border-b border-gray-100 last:border-0",
-                                            "hover:text-teal-muted hover:bg-gray-50/50 px-4 rounded-lg",
-                                            "active:scale-[0.98] transform duration-100",
-                                            isActive
-                                                ? "text-teal-muted"
-                                                : "text-navy-charcoal"
-                                        )}
-                                        aria-current={isActive ? "page" : undefined}
-                                    >
-                                        {link.label}
-                                    </Link>
-                                </li>
-                            );
-                        })}
+                {/* Desktop Links */}
+                <ul className="hidden md:flex items-center gap-8">
+                    {NAV_LINKS.map((link) => (
+                        <li key={link.href}>
+                            <Link
+                                href={link.href}
+                                onClick={(e) => scrollToSection(e, link.href)}
+                                className="text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors tracking-wide"
+                            >
+                                {link.label}
+                            </Link>
+                        </li>
+                    ))}
+                    <li>
+                        <a href="#get-involved" onClick={(e) => scrollToSection(e, "#get-involved")} className="btn btn-primary text-xs py-2 px-4 shadow-none bg-blue-900 text-white hover:bg-blue-950 border-transparent">
+                            Get Involved
+                        </a>
+                    </li>
+                </ul>
+
+                {/* Mobile Menu Button */}
+                <button
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    className="md:hidden p-2 text-navy-900"
+                    aria-label="Toggle menu"
+                >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        {isMobileMenuOpen ? (
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        ) : (
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                        )}
+                    </svg>
+                </button>
+            </div>
+
+            {/* Mobile Menu */}
+            {isMobileMenuOpen && (
+                <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-100 shadow-xl p-4">
+                    <ul className="flex flex-col space-y-4">
+                        {NAV_LINKS.map((link) => (
+                            <li key={link.href}>
+                                <Link
+                                    href={link.href}
+                                    onClick={(e) => scrollToSection(e, link.href)}
+                                    className="block text-lg font-medium text-navy-900 py-2 border-b border-slate-50 hover:text-blue-900"
+                                >
+                                    {link.label}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
-            </div>
+            )}
         </nav>
     );
 }

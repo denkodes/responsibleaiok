@@ -1,13 +1,8 @@
 /**
  * MISSION SECTION
  * 
- * Concise mission statement with centered layout.
- * 
- * Design Features:
- * - Centered text with optimal readability (42ch max-width)
- * - Generous whitespace surrounding content
- * - Clean typography hierarchy
- * - Subtle fade-in animation on scroll
+ * Theme: Swiss Institutional
+ * Refactored for structural clarity. Added prominent grid lines.
  */
 
 "use client";
@@ -20,42 +15,17 @@ export default function MissionSection() {
     const sectionRef = useRef<HTMLElement>(null);
     const [isVisible, setIsVisible] = useState(false);
 
-    /* ============================================
-       SCROLL-TRIGGERED ANIMATION
-       ============================================
-       
-       Uses Intersection Observer to detect when section
-       enters viewport, then triggers fade-in animation.
-       ============================================ */
     useEffect(() => {
-        const shouldAnimate = !prefersReducedMotion();
-        if (!shouldAnimate) {
-            setIsVisible(true);
-            return;
-        }
-
         const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setIsVisible(true);
-                    }
-                });
+            ([entry]) => {
+                if (entry.isIntersecting) setIsVisible(true);
             },
-            {
-                // Trigger when 20% of section is visible
-                threshold: 0.2,
-            }
+            { threshold: 0.2 }
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
-
+        if (sectionRef.current) observer.observe(sectionRef.current);
         return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
-            }
+            if (sectionRef.current) observer.unobserve(sectionRef.current);
         };
     }, []);
 
@@ -63,42 +33,50 @@ export default function MissionSection() {
         <section
             id="mission"
             ref={sectionRef}
-            className="section-padding bg-white"
+            className="section-spacing bg-white"
             aria-labelledby="mission-heading"
         >
-            <div className="container-custom">
-                {/* Swiss asymmetric balance - right-aligned on desktop */}
-                <div className="max-w-5xl lg:ml-auto">
-                    <div className={cn(
-                        "space-y-6 flex flex-col lg:items-end lg:text-right",
-                        isVisible && "fade-in"
-                    )}>
-                        {/* Section heading */}
-                        <div className="space-y-4 flex flex-col lg:items-end">
-                            <div className="h-0.5 w-12 bg-coral-warm" />
+            <div className="container-standard">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+
+                    {/* Left Column: Heading */}
+                    <div className="lg:col-span-4">
+                        <div className={cn(
+                            "sticky top-32 transition-opacity duration-700",
+                            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                        )}>
                             <h2
                                 id="mission-heading"
-                                className="text-3xl md:text-5xl font-black text-navy-deep tracking-tight leading-tight max-w-3xl"
+                                className="text-3xl md:text-5xl font-bold tracking-tighter text-navy-900"
                             >
                                 {MISSION_CONTENT.heading}
                             </h2>
                         </div>
+                    </div>
 
-                        {/* Mission statement - natural wrap */}
+                    {/* Right Column: Content */}
+                    <div className="lg:col-span-8">
+                        {/* Structural Line - Swiss Style */}
+                        <div className="hidden lg:block w-full h-px bg-slate-200 mb-8" />
+
                         <div className={cn(
-                            "max-w-4xl space-y-4",
-                            isVisible && "fade-in fade-in-delay-1"
+                            "space-y-8 transition-opacity duration-700 delay-150",
+                            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                         )}>
-                            <p className="text-lg md:text-xl text-navy-charcoal font-normal leading-relaxed">
+                            <p className="text-xl md:text-3xl leading-tight text-slate-800 font-medium tracking-tight">
                                 {MISSION_CONTENT.statement}
                             </p>
+
                             {MISSION_CONTENT.supportLine && (
-                                <p className="mt-8 text-base md:text-lg text-slate/80 font-normal italic border-l-2 lg:border-l-0 lg:border-r-2 border-coral-warm/30 pl-6 lg:pl-0 lg:pr-6 leading-relaxed">
-                                    {MISSION_CONTENT.supportLine}
-                                </p>
+                                <div className="pl-6 border-l-4 border-blue-900">
+                                    <p className="text-lg text-slate-500 font-medium">
+                                        {MISSION_CONTENT.supportLine}
+                                    </p>
+                                </div>
                             )}
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
