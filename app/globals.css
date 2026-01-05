@@ -133,8 +133,10 @@
   --content-medium: 60ch;
   --content-wide: 75ch;
   --container-max: 1200px;
-  --container-gutter: 5rem;
-  /* 80px side gutters */
+  --container-gutter: 6vw;
+  /* Fluid edge spacing - never cramped */
+  --container-gutter-mobile: 1.5rem;
+  /* 24px mobile minimum */
 }
 
 /* ============================================
@@ -362,8 +364,8 @@ a:focus-visible {
   max-width: var(--container-max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--space-6);
-  padding-right: var(--space-6);
+  padding-left: var(--container-gutter-mobile);
+  padding-right: var(--container-gutter-mobile);
 }
 
 @media (min-width: 768px) {
@@ -373,10 +375,10 @@ a:focus-visible {
   }
 }
 
-/* Section padding - generous breathing room */
+/* Section padding - institutional breathing room */
 .section-padding {
-  padding-top: var(--space-20);
-  padding-bottom: var(--space-20);
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
 }
 
 @media (min-width: 768px) {

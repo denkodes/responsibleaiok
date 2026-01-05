@@ -129,11 +129,11 @@ export default function ActivitiesSection() {
                 {/* ============================================
             SECTION HEADER
             ============================================ */}
-                <div className="max-w-5xl mx-auto text-center mb-24 space-y-8">
+                <div className="max-w-4xl mx-auto text-center mb-20 space-y-6">
                     <h2
                         id="activities-heading"
                         className={cn(
-                            "text-4xl md:text-8xl font-black text-navy-deep leading-tight tracking-[-0.05em]",
+                            "text-3xl md:text-5xl font-black text-navy-deep leading-tight tracking-tight",
                             isVisible && "fade-in"
                         )}
                     >
@@ -141,7 +141,7 @@ export default function ActivitiesSection() {
                     </h2>
                     <p
                         className={cn(
-                            "text-lg sm:text-2xl text-slate/80 font-medium max-w-2xl mx-auto",
+                            "text-base sm:text-lg text-slate/80 font-normal max-w-2xl mx-auto leading-relaxed",
                             isVisible && "fade-in fade-in-delay-1"
                         )}
                     >
@@ -166,31 +166,31 @@ export default function ActivitiesSection() {
                                 key={activity.id}
                                 className={cn(
                                     gridSpans[index],
-                                    "relative p-10 md:p-14 rounded-[2.5rem] glass-card shadow-lg",
+                                    "relative p-8 md:p-12 rounded-3xl glass-card shadow-lg",
                                     "transition-all duration-700 ease-smooth group overflow-hidden",
                                     "hover:shadow-hover hover:-translate-y-3",
                                     isVisible && `fade-in fade-in-delay-${index + 2}`
                                 )}
                             >
-                                {/* Activity Index - Ultra Bold Institutional Detail */}
-                                <div className="absolute top-10 right-10 text-[10rem] font-black text-navy-deep/[0.02] select-none pointer-events-none tracking-[-0.1em] group-hover:text-teal-muted/5 transition-colors duration-700">
+                                {/* Activity Index - Subtle but visible */}
+                                <div className="absolute top-8 right-8 text-[8rem] font-black text-navy-deep/[0.05] select-none pointer-events-none tracking-[-0.1em] group-hover:text-teal-muted/10 transition-colors duration-700">
                                     0{index + 1}
                                 </div>
 
                                 {/* Hover Glow Effect */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-teal-muted/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-                                <div className="relative z-10 space-y-12">
+                                <div className="relative z-10 space-y-8">
                                     {/* Icon - Refined Precision */}
-                                    <div className="relative inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white shadow-sm border border-gray-border/50 text-teal-muted transition-all duration-500 group-hover:bg-teal-muted group-hover:text-white group-hover:scale-110 group-hover:rotate-3">
+                                    <div className="relative inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white shadow-sm border border-gray-border/50 text-teal-muted transition-all duration-500 group-hover:bg-teal-muted group-hover:text-white group-hover:scale-110 group-hover:rotate-3">
                                         {Icons[activity.icon as keyof typeof Icons]}
                                     </div>
 
-                                    <div className="space-y-6">
-                                        <h3 className="text-3xl md:text-4xl font-black text-navy-deep tracking-tight group-hover:text-teal-muted transition-colors duration-300">
+                                    <div className="space-y-4">
+                                        <h3 className="text-2xl md:text-3xl font-black text-navy-deep tracking-tight group-hover:text-teal-muted transition-colors duration-300">
                                             {activity.title}
                                         </h3>
-                                        <p className="text-slate text-lg md:text-xl font-medium leading-relaxed max-w-xl">
+                                        <p className="text-slate text-base md:text-lg font-normal leading-relaxed max-w-xl">
                                             {activity.description}
                                         </p>
                                     </div>
