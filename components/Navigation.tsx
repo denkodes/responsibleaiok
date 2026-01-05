@@ -15,6 +15,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { NAV_LINKS, ORG_INFO } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -152,24 +153,31 @@ export default function Navigation() {
                             const isActive = activeSection === link.href.replace("#", "");
 
                             return (
-                                <li key={link.href}>
+                                <li key={link.href} className="relative">
                                     <Link
                                         href={link.href}
                                         onClick={(e) => handleNavClick(e, link.href)}
                                         className={cn(
                                             // Base styles
                                             "text-sm font-semibold transition-all duration-300",
-                                            "hover:text-teal-muted tracking-wide py-2",
-                                            "focus-visible:outline-teal-muted focus-visible:outline-offset-4 rounded-sm",
+                                            "hover:text-teal-warm tracking-wide py-2 relative z-10",
+                                            "focus-visible:outline-teal-warm focus-visible:outline-offset-4 rounded-sm",
 
-                                            // Active state
+                                            // Text color change
                                             isActive
-                                                ? "text-teal-muted border-b-2 border-teal-muted"
+                                                ? "text-teal-warm"
                                                 : "text-slate"
                                         )}
                                         aria-current={isActive ? "page" : undefined}
                                     >
                                         {link.label}
+                                        {isActive && (
+                                            <motion.div
+                                                layoutId="activeTabBadge"
+                                                className="absolute -bottom-1 left-0 right-0 h-0.5 bg-teal-warm rounded-full"
+                                                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                            />
+                                        )}
                                     </Link>
                                 </li>
                             );
