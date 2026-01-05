@@ -75,7 +75,7 @@ export default function Navigation() {
                         </li>
                     ))}
                     <li>
-                        <a href="#get-involved" onClick={(e) => scrollToSection(e, "#get-involved")} className="btn btn-primary text-sm py-2.5 px-6 shadow-none bg-blue-900 text-white hover:bg-blue-950 border-transparent">
+                        <a href="#get-involved" onClick={(e) => scrollToSection(e, "#get-involved")} className="btn btn-primary">
                             Get Involved
                         </a>
                     </li>

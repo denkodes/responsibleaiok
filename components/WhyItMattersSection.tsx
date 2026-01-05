@@ -26,7 +26,7 @@ export default function WhyItMattersSection() {
 
                         <h2
                             id="why-heading"
-                            className="text-3xl md:text-5xl font-extrabold text-navy-900 tracking-tight leading-[1.1]"
+                            className="text-3xl md:text-4xl font-bold text-navy-900 tracking-tight"
                         >
                             {WHY_IT_MATTERS_CONTENT.heading}
                         </h2>

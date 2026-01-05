@@ -23,7 +23,7 @@ export default function AboutSection() {
                     <div className="lg:col-span-4">
                         <h2
                             id="about-heading"
-                            className="text-3xl md:text-5xl font-bold tracking-tighter text-navy-900"
+                            className="text-3xl md:text-4xl font-bold tracking-tight text-navy-900"
                         >
                             {ABOUT_CONTENT.heading}
                         </h2>

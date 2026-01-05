@@ -63,7 +63,7 @@ export default function HeroSection() {
                         shouldAnimate && isVisible && "fade-in fade-in-delay-2"
                     )}>
                         <div className="hidden md:block h-10 w-0.5 bg-slate-200"></div>
-                        <p className="text-xl md:text-2xl text-slate-600 max-w-[55ch] leading-relaxed m-0 font-normal">
+                        <p className="text-xl md:text-2xl text-slate-600 leading-relaxed">
                             {HERO_CONTENT.subhead}
                         </p>
                     </div>
@@ -77,7 +77,7 @@ export default function HeroSection() {
                     >
                         <a
                             href={HERO_CONTENT.ctaHref}
-                            className="btn btn-primary bg-blue-900 border-blue-900 text-white hover:bg-blue-950 hover:border-blue-950 px-8 py-3.5"
+                            className="btn btn-primary"
                             aria-label={`${HERO_CONTENT.ctaText} - Go to contact`}
                         >
                             {HERO_CONTENT.ctaText}
@@ -85,7 +85,7 @@ export default function HeroSection() {
 
                         <a
                             href={HERO_CONTENT.secondaryCtaHref}
-                            className="btn btn-secondary text-blue-900 border-slate-200 hover:border-blue-900 hover:bg-slate-50 px-8 py-3.5"
+                            className="btn btn-secondary"
                         >
                             {HERO_CONTENT.secondaryCtaText}
                         </a>

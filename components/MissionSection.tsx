@@ -47,7 +47,7 @@ export default function MissionSection() {
                         )}>
                             <h2
                                 id="mission-heading"
-                                className="text-3xl md:text-5xl font-bold tracking-tighter text-navy-900"
+                                className="text-3xl md:text-4xl font-bold tracking-tight text-navy-900"
                             >
                                 {MISSION_CONTENT.heading}
                             </h2>
@@ -63,7 +63,7 @@ export default function MissionSection() {
                             "space-y-8 transition-opacity duration-700 delay-150",
                             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                         )}>
-                            <p className="text-xl md:text-3xl leading-tight text-slate-800 font-medium tracking-tight">
+                            <p className="text-xl md:text-2xl leading-relaxed text-slate-800 font-medium">
                                 {MISSION_CONTENT.statement}
                             </p>
 

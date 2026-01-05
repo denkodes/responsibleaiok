@@ -5,8 +5,8 @@
  * Theme: Deep Institutional (Swiss Edition)
  * 
  * CORE PRINCIPLES:
- * 1. Sophistication: Deep, rich blues and stark whites.
- * 2. Swiss Precision: Tight tracking (-0.04em), sharp edges (0px radius), hard shadows.
+ * 1. Sophistication: Deep navy with warm burgundy accent.
+ * 2. Swiss Precision: Tight tracking, sharp edges, hard shadows with glows.
  * 3. Authority: Massive contrast in type scale.
  * 4. Rhythm: Tiered spacing for narrative pacing.
  */
@@ -30,6 +30,12 @@
   --brand-primary: #1e3a8a;
   --brand-primary-hover: #172554;
 
+  /* Accent for CTAs - Bright Cyan (Fresh, Modern) */
+  --brand-cta: #0891b2;
+  /* Cyan 600 - bright, fresh */
+  --brand-cta-hover: #0e7490;
+  /* Cyan 700 - slightly deeper */
+
   --brand-accent: #eff6ff;
   --brand-accent-strong: #1e40af;
 
@@ -39,7 +45,6 @@
   /* --- SPACING & LAYOUT (TIERED) --- */
   --max-width-wide: 1280px;
   --max-width-text: 70ch;
-  /* Increased from 65ch for better readability */
 
   --gutter-mobile: 1.25rem;
   --gutter-desktop: 2.5rem;
@@ -61,10 +66,8 @@
 
   /* --- TYPOGRAPHY (Swiss Style - Refined) --- */
   --leading-tight: 1.05;
-  /* Increased from 1 for better readability */
   --leading-snug: 1.2;
   --leading-normal: 1.6;
-  /* Increased from 1.5 */
 
   /* Swiss Layout Utilities */
   --radius-sharp: 0px;
@@ -97,15 +100,12 @@ h4 {
 
 h1 {
   font-size: clamp(2.5rem, 7vw, 5.5rem);
-  /* Reduced mobile start */
   font-weight: 800;
 }
 
 h2 {
   font-size: clamp(1.75rem, 5vw, 3.5rem);
-  /* Reduced from 4rem max */
   margin-bottom: 2rem;
-  /* Increased from implicit */
 }
 
 @media (min-width: 768px) {
@@ -121,11 +121,9 @@ h3 {
 p {
   color: var(--text-secondary);
   margin-bottom: 1.75rem;
-  /* Increased from 1.5rem */
   font-size: 1.125rem;
   letter-spacing: -0.01em;
   max-width: var(--max-width-text);
-  /* Add readability constraint */
 }
 
 /* Eyebrow Label - understated */
@@ -190,55 +188,90 @@ p {
   }
 }
 
-/* Button System - Swiss Sharp */
+/* Button System - Inverted Swiss Bold with Burgundy Glow */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 1rem 2.5rem;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: var(--radius-sharp);
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
 }
 
 .btn-primary {
-  background: var(--brand-primary);
+  background: var(--brand-cta);
   color: white;
-  border: 1px solid var(--brand-primary);
+  border: 3px solid var(--brand-cta);
+  box-shadow:
+    4px 4px 0px rgba(8, 145, 178, 0.2),
+    0 0 0 rgba(8, 145, 178, 0);
 }
 
 .btn-primary:hover {
-  background: var(--brand-primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 4px 4px 0px rgba(15, 23, 42, 0.2);
+  background: var(--brand-cta-hover);
+  border-color: var(--brand-cta-hover);
+  transform: translate(-2px, -2px);
+  box-shadow:
+    6px 6px 0px rgba(8, 145, 178, 0.3),
+    0 0 20px rgba(8, 145, 178, 0.4),
+    0 0 40px rgba(8, 145, 178, 0.2);
 }
 
 .btn-secondary {
-  background: transparent;
-  color: var(--brand-primary);
-  border: 1px solid var(--border-subtle);
+  background: white;
+  color: var(--brand-navy);
+  border: 3px solid var(--brand-navy);
+  box-shadow:
+    4px 4px 0px rgba(15, 23, 42, 0.15),
+    0 0 0 rgba(15, 23, 42, 0);
 }
 
 .btn-secondary:hover {
-  border-color: var(--brand-primary);
-  background: var(--bg-surface);
-  box-shadow: 4px 4px 0px rgba(226, 232, 240, 1);
+  background: var(--brand-navy);
+  color: white;
+  transform: translate(-2px, -2px);
+  box-shadow:
+    6px 6px 0px rgba(15, 23, 42, 0.25),
+    0 0 20px rgba(15, 23, 42, 0.3),
+    0 0 40px rgba(15, 23, 42, 0.15);
 }
 
-/* Card System - Swiss Clean */
+/* Card System - Swiss Clean with Burgundy Glow */
 .card-clean {
   background: white;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sharp);
   padding: var(--space-lg);
   transition: all 0.2s ease;
+  box-shadow: 0 0 0 rgba(8, 145, 178, 0);
 }
 
 .card-clean:hover {
-  border-color: var(--brand-primary);
-  box-shadow: 8px 8px 0px rgba(226, 232, 240, 0.5);
+  border-color: var(--brand-cta);
+  box-shadow:
+    8px 8px 0px rgba(226, 232, 240, 0.5),
+    0 0 30px rgba(8, 145, 178, 0.15),
+    0 0 60px rgba(8, 145, 178, 0.08);
+}
+
+/* Form Input Focus Glow - Accessible & Modern */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(8, 145, 178, 0.1),
+    0 0 20px rgba(8, 145, 178, 0.2);
+}
+
+/* Structural Accent Glow (optional utility) */
+.accent-glow {
+  box-shadow: 0 0 20px rgba(8, 145, 178, 0.12);
 }
 
 /* Animations */

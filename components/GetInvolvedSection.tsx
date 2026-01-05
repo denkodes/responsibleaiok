@@ -81,7 +81,7 @@ export default function GetInvolvedSection() {
                         {/* REMOVED: Redundant eyebrow text */}
                         <h2
                             id="get-involved-heading"
-                            className="text-3xl md:text-5xl font-bold text-navy-900 mb-6 tracking-tight"
+                            className="text-3xl md:text-4xl font-bold text-navy-900 mb-6 tracking-tight"
                         >
                             {GET_INVOLVED_CONTENT.heading}
                         </h2>
@@ -92,7 +92,7 @@ export default function GetInvolvedSection() {
 
                     {/* Success State */}
                     {isSuccess ? (
-                        <div className="bg-white border border-blue-900/20 rounded-lg p-12 text-center shadow-sm">
+                        <div className="bg-white border border-blue-900/20 rounded-lg p-12 text-center shadow-sm" role="status" aria-live="polite">
                             <h3 className="text-2xl font-bold text-navy-900 mb-4">Message Received</h3>
                             <p className="text-slate-600">We appreciate you reaching out. We will be in touch shortly.</p>
                         </div>
@@ -167,7 +167,7 @@ export default function GetInvolvedSection() {
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="w-full btn btn-primary bg-blue-900 text-white hover:bg-blue-950 py-4 text-base mt-6 disabled:opacity-50"
+                                        className="w-full btn btn-primary py-4 text-base mt-6 disabled:opacity-50"
                                     >
                                         {isSubmitting ? "Sending..." : "Submit Inquiry"}
                                     </button>
