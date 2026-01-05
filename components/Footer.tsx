@@ -55,13 +55,7 @@ export default function Footer() {
             <div className="container-custom relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24 mb-24">
                     {/* Brand Column */}
-                    <div className="md:col-span-5 space-y-8">
-                        <div className="space-y-4">
-                            <h3 className="text-3xl font-bold tracking-tight text-white">
-                                {FOOTER_CONTENT.organizationName}
-                            </h3>
-                        </div>
-
+                    <div className="md:col-span-5 space-y-6">
                         <p className="text-slate-300 text-lg leading-relaxed max-w-sm">
                             {FOOTER_CONTENT.blurb}
                         </p>
@@ -112,9 +106,19 @@ export default function Footer() {
                     <h1 className="text-[12vw] leading-none font-black text-white/5 tracking-tighter text-center select-none pointer-events-none">
                         RESPONSIBLE AI
                     </h1>
-                    <div className="flex flex-col md:flex-row justify-between items-center mt-8 text-sm text-slate-500 font-medium tracking-wide">
-                        <p>{FOOTER_CONTENT.copyright}</p>
-                        <div className="flex gap-8 mt-4 md:mt-0">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-6 mt-8 text-sm text-slate-500 font-medium tracking-wide">
+                        <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+                            <p>{FOOTER_CONTENT.copyright}</p>
+                            <a
+                                href="https://www.outretechnology.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-slate-300 transition-colors"
+                            >
+                                Built by Outre Technology
+                            </a>
+                        </div>
+                        <div className="flex gap-8">
                             <span className="hover:text-slate-300 transition-colors cursor-not-allowed">Privacy Policy</span>
                             <span className="hover:text-slate-300 transition-colors cursor-not-allowed">Terms of Service</span>
                         </div>

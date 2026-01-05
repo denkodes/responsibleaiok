@@ -67,8 +67,8 @@ export default function MissionSection() {
             aria-labelledby="mission-heading"
         >
             <div className="container-custom">
-                {/* Swiss asymmetric layout - left-aligned, balanced */}
-                <div className="max-w-5xl">
+                {/* Swiss asymmetric balance - right-aligned to contrast left hero */}
+                <div className="max-w-5xl ml-auto">
                     <div className={cn(
                         "space-y-8",
                         isVisible && "fade-in"

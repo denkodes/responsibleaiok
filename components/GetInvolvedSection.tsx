@@ -207,23 +207,18 @@ export default function GetInvolvedSection() {
               ============================================ */}
                     <div
                         className={cn(
-                            "max-w-5xl mx-auto text-center mb-20 space-y-6 relative z-10",
+                            "max-w-3xl mx-auto text-center mb-16 space-y-4 relative z-10",
                             isVisible && "fade-in"
                         )}
                     >
                         <h2
                             id="get-involved-heading"
-                            className="text-4xl md:text-7xl font-black text-navy-deep tracking-tight"
+                            className="text-3xl md:text-5xl font-black text-navy-deep tracking-tight"
                         >
                             {GET_INVOLVED_CONTENT.heading}
                         </h2>
-                        <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-                            <p className="text-xl md:text-2xl font-bold text-teal-muted/90 uppercase tracking-widest">
-                                {GET_INVOLVED_CONTENT.subheading}
-                            </p>
-                        </div>
-                        <p className="text-xl md:text-2xl text-slate text-center max-w-3xl mx-auto leading-relaxed pt-6">
-                            We're almost there. Be part of the conversation.
+                        <p className="text-lg md:text-xl text-slate max-w-2xl mx-auto leading-relaxed">
+                            {GET_INVOLVED_CONTENT.subheading}
                         </p>
                     </div>
 
