@@ -101,12 +101,9 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* Massive Site-Ender Typography */}
+                {/* Footer credits */}
                 <div className="border-t border-white/10 pt-12 pb-8">
-                    <h1 className="text-[12vw] leading-none font-black text-white/5 tracking-tighter text-center select-none pointer-events-none">
-                        RESPONSIBLE AI
-                    </h1>
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-6 mt-8 text-sm text-slate-500 font-medium tracking-wide">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500 font-medium tracking-wide">
                         <div className="flex flex-col md:flex-row gap-4 md:gap-8">
                             <p>{FOOTER_CONTENT.copyright}</p>
                             <a
