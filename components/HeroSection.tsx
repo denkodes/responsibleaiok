@@ -92,9 +92,8 @@ export default function HeroSection() {
                     </div>
                 </div>
             </div>
-            {/* Bottom Scroll Indicator - Aligned Left */}
             {/* Bottom Scroll Indicator - Centered Vertical */}
-            <div className="absolute bottom-0 left-0 right-0 z-10 pb-8 pointer-events-none">
+            <div className="absolute bottom-0 left-0 right-0 z-10 pb-8 pointer-events-none hidden md:block">
                 <div className="flex flex-col items-center justify-center gap-3 opacity-60">
                     <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Scroll</span>
                     <div className="w-px h-12 bg-slate-200 overflow-hidden relative">

@@ -35,7 +35,6 @@ export const NAV_LINKS = [
   { label: "Activities", href: "#activities" },
   { label: "Why It Matters", href: "#why-it-matters" },
   { label: "About", href: "#about" },
-  { label: "Get Involved", href: "#get-involved" },
 ] as const;
 
 /* ============================================
@@ -82,7 +81,7 @@ export const ACTIVITIES_CONTENT = {
     {
       id: "education",
       title: "Education and Awareness",
-      description: "Intro learning materials and curated resources that help communities build baseline AI literacy. More technical learning is delivered through partnerships, and we plan to expand curriculum over time as funding grows.",
+      description: "Intro learning materials and curated resources that help communities build baseline AI literacy. More technical learning is delivered through partnerships, with curriculum expanding over time in response to community needs.",
       icon: "lightbulb",
     },
     {
@@ -110,9 +109,9 @@ export const ABOUT_CONTENT = {
   kicker: "Background",
   heading: "About Us",
   paragraphs: [
-    "Responsible AI OK is a public interest initiative rooted in Oklahoma. We bring people together across community, nonprofit, civic, and education contexts to build responsible AI readiness that reflects local needs and values while staying connected to national and global work.",
-    "We previously operated as AI Safety Tulsa and are continuing that mission under Responsible AI OK.",
-    "While currently volunteer-led, we are delivering immediate impact through our programs, collaboration, and partnership. We are actively fundraising to establish a permanently staffed institution that can sustain and expand this critical work for Oklahoma's future.",
+    "Responsible AI OK is a public interest initiative rooted in Oklahoma. We bring people together across community, nonprofit, civic, and education contexts to build responsible AI readiness that reflects local needs and values, while staying connected to national and global work.",
+    "We previously operated as AI Safety Tulsa and continue that mission under Responsible AI OK, with an expanded focus on practical adoption, education, and governance.",
+    "Our programs, collaborations, and partnerships are designed to support long-term responsible AI capacity across the state.",
   ],
   fundingLine: null,
 } as const;
@@ -199,7 +198,7 @@ export const FOOTER_CONTENT = {
   contactEmail: SITE_METADATA.contactEmail,
   social: [
     { platform: "LinkedIn", url: "#", icon: "linkedin" },
-    { platform: "Twitter", url: "#", icon: "twitter" },
+    { platform: "Facebook", url: "#", icon: "facebook" },
   ],
   copyright: `© ${new Date().getFullYear()} ${ORG_INFO.name}. All rights reserved.`,
 } as const;
