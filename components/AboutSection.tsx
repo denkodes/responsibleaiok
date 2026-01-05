@@ -53,7 +53,7 @@ export default function AboutSection() {
         <section
             id="about"
             ref={sectionRef}
-            className="section-padding bg-off-white"
+            className="section-padding bg-gradient-to-br from-orange-50/30 via-white to-teal-50/20"
             aria-labelledby="about-heading"
         >
             <div className="container-custom">

@@ -164,7 +164,7 @@ export default function ActivitiesSection() {
                                 key={activity.id}
                                 className={cn(
                                     gridSpans[index],
-                                    "relative p-10 md:p-16 rounded-3xl glass-card shadow-lg",
+                                    "relative p-10 md:p-16 rounded-2xl glass-card shadow-lg",
                                     "transition-all duration-700 ease-smooth group overflow-hidden",
                                     "hover:shadow-hover hover:-translate-y-3",
                                     isVisible && `fade-in fade-in-delay-${index + 2}`
