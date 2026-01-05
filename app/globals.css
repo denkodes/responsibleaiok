@@ -16,36 +16,40 @@
    COLOR PALETTE - Minimal Luxury
    ============================================ */
 :root {
-  /* Primary Colors - Deep, sophisticated navy anchors professionalism */
-  --navy-deep: #112A46;
-  --navy-charcoal: #1E293B;
-  --slate: #334155;
+  /* Primary Colors - Warm, inviting navy */
+  --navy-deep: #1a365d;
+  --navy-charcoal: #2d3748;
+  --slate: #4a5568;
 
-  /* Accent - Muted teal for tech credibility without loudness */
-  --teal-muted: #4A7C8F;
-  --teal-light: #06B6D4;
+  /* Accent - Warm teal for approachability */
+  --teal-warm: #0d9488;
+  --teal-light: #14b8a6;
+  --teal-subtle: #5eead4;
 
-  /* Warm Accent - Taupe gold for CTAs (luxury, not startup) */
-  --taupe-gold: #D0A03C;
-  --taupe-light: #E5B962;
+  /* Warm Accent - Inviting coral/orange for CTAs */
+  --coral-warm: #f97316;
+  --coral-light: #fb923c;
+  --coral-glow: rgba(249, 115, 22, 0.15);
 
-  /* Neutrals - Clean backgrounds and text */
-  --off-white: #FAF9F6;
-  --gray-light: #F1F5F9;
-  --gray-border: #E2E8F0;
+  /* Neutrals - Warm off-whites and creams */
+  --off-white: #fafaf9;
+  --cream-light: #fef3c7;
+  --gray-light: #f5f5f4;
+  --gray-border: #e7e5e4;
 
   /* Semantic Colors */
   --background: var(--off-white);
   --foreground: var(--slate);
   --heading: var(--navy-deep);
-  --accent: var(--teal-muted);
-  --cta: var(--taupe-gold);
+  --accent: var(--teal-warm);
+  --cta: var(--coral-warm);
 
-  /* Premium UI Accents */
-  --glass-border: rgba(15, 23, 42, 0.05);
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glow-teal: rgba(6, 182, 212, 0.15);
-  --glow-gold: rgba(167, 129, 102, 0.1);
+  /* Warm UI Accents */
+  --glass-border: rgba(13, 148, 136, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glow-teal: rgba(13, 148, 136, 0.2);
+  --glow-warm: rgba(249, 115, 22, 0.15);
+  --warm-gradient: linear-gradient(135deg, rgba(251, 146, 60, 0.05) 0%, rgba(20, 184, 166, 0.05) 100%);
 }
 
 /* ============================================
@@ -143,16 +147,19 @@
    SHADOW SYSTEM - Soft, Navy-Tinted
    ============================================ */
 :root {
-  /* Tier-1 Shadow System */
-  --shadow-sm: 0 2px 4px rgba(17, 42, 70, 0.02), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
-  --shadow-md: 0 4px 8px -2px rgba(17, 42, 70, 0.06), 0 2px 4px -2px rgba(17, 42, 70, 0.03), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
-  --shadow-lg: 0 12px 24px -6px rgba(17, 42, 70, 0.08), 0 4px 8px -4px rgba(17, 42, 70, 0.04), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
-  --shadow-xl: 0 32px 64px -12px rgba(17, 42, 70, 0.12), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  /* Warm, inviting shadow system */
+  --shadow-sm: 0 2px 4px rgba(13, 148, 136, 0.04), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
 
-  --shadow-glass: 0 8px 32px 0 rgba(74, 124, 143, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  --shadow-md: 0 4px 8px -2px rgba(13, 148, 136, 0.08), 0 2px 4px -2px rgba(249, 115, 22, 0.04), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
 
-  /* Hover state */
-  --shadow-hover: 0 32px 64px -12px rgba(74, 124, 143, 0.15), 0 16px 32px -8px rgba(17, 42, 70, 0.08), 0 0 0 1px rgba(74, 124, 143, 0.1);
+  --shadow-lg: 0 12px 24px -6px rgba(13, 148, 136, 0.12), 0 4px 8px -4px rgba(249, 115, 22, 0.06), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+
+  --shadow-xl: 0 32px 64px -12px rgba(13, 148, 136, 0.15), 0 8px 16px -8px rgba(249, 115, 22, 0.08), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+
+  --shadow-glass: 0 8px 32px 0 rgba(13, 148, 136, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+
+  /* Warm hover glow */
+  --shadow-hover: 0 32px 64px -12px rgba(13, 148, 136, 0.18), 0 16px 32px -8px rgba(249, 115, 22, 0.12), 0 0 0 1px rgba(249, 115, 22, 0.1);
 }
 
 /* ============================================
@@ -557,7 +564,7 @@ a:not(.btn) {
 }
 
 a:not(.btn):hover {
-  color: var(--teal-muted);
+  color: var(--teal-warm);
 }
 
 /* Section heading subtle warm glow on hover */
@@ -566,20 +573,20 @@ h2 {
 }
 
 h2:hover {
-  text-shadow: 0 0 20px rgba(208, 160, 60, 0.15);
+  text-shadow: 0 0 20px var(--coral-glow);
 }
 
-/* Card hover: warm lift with subtle glow */
+/* Card hover: warm lift with inviting glow */
 .glass-card {
   transition: all var(--duration-slow) var(--ease-spring);
 }
 
 .glass-card:hover {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   box-shadow:
-    0 20px 40px -10px rgba(74, 124, 143, 0.12),
-    0 0 0 1px rgba(208, 160, 60, 0.08),
-    0 0 30px rgba(208, 160, 60, 0.05);
+    0 20px 40px -10px rgba(13, 148, 136, 0.15),
+    0 0 0 1px rgba(249, 115, 22, 0.1),
+    0 0 40px rgba(249, 115, 22, 0.08);
 }
 
 /* Warm accent line animation */
@@ -595,7 +602,7 @@ h2:hover {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--taupe-gold), var(--teal-muted));
+  background: linear-gradient(90deg, var(--coral-warm), var(--teal-warm));
   transition: width var(--duration-slow) var(--ease-spring);
 }
 
@@ -605,13 +612,13 @@ h2:hover {
 
 /* Smooth focus glow - accessibility + aesthetics */
 *:focus-visible {
-  outline: 2px solid var(--taupe-gold);
+  outline: 2px solid var(--coral-warm);
   outline-offset: 3px;
-  box-shadow: 0 0 0 4px rgba(208, 160, 60, 0.15);
+  box-shadow: 0 0 0 4px var(--coral-glow);
   transition: box-shadow var(--duration-fast) var(--ease-smooth);
 }
 
-/* Professional section separator with gradient */
+/* Professional section separator with warm gradient */
 .section-padding {
   position: relative;
 }
@@ -627,10 +634,11 @@ h2:hover {
   height: 1px;
   background: linear-gradient(90deg,
       transparent,
-      rgba(74, 124, 143, 0.15) 25%,
-      rgba(74, 124, 143, 0.15) 75%,
+      rgba(13, 148, 136, 0.2) 25%,
+      rgba(249, 115, 22, 0.15) 50%,
+      rgba(13, 148, 136, 0.2) 75%,
       transparent);
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 /* Warm icon pulse on hover */
@@ -639,16 +647,16 @@ svg {
 }
 
 svg:hover {
-  filter: drop-shadow(0 0 8px rgba(208, 160, 60, 0.3));
+  filter: drop-shadow(0 0 8px var(--coral-glow));
 }
 
-/* Subtle text selection */
+/* Warm text selection */
 ::selection {
-  background-color: rgba(208, 160, 60, 0.25);
+  background-color: rgba(249, 115, 22, 0.2);
   color: var(--navy-deep);
 }
 
 ::-moz-selection {
-  background-color: rgba(208, 160, 60, 0.25);
+  background-color: rgba(249, 115, 22, 0.2);
   color: var(--navy-deep);
 }
