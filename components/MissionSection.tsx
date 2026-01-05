@@ -93,7 +93,7 @@ export default function MissionSection() {
                                 {MISSION_CONTENT.statement}
                             </p>
                             {MISSION_CONTENT.supportLine && (
-                                <p className="text-base md:text-lg text-slate/80 font-normal italic border-l-2 lg:border-l-0 lg:border-r-2 border-coral-warm/30 pl-6 lg:pl-0 lg:pr-6">
+                                <p className="mt-8 text-base md:text-lg text-slate/80 font-normal italic border-l-2 lg:border-l-0 lg:border-r-2 border-coral-warm/30 pl-6 lg:pl-0 lg:pr-6 leading-relaxed">
                                     {MISSION_CONTENT.supportLine}
                                 </p>
                             )}
