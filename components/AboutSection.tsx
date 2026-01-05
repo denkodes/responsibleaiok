@@ -73,7 +73,7 @@ export default function AboutSection() {
                     >
                         {/* Heading with sophisticated accent */}
                         <div className="space-y-4">
-                            <span className="label-uppercase text-taupe-gold tracking-widest text-xs font-bold">{ABOUT_CONTENT.kicker}</span>
+                            <span className="label-uppercase text-coral-warm tracking-widest text-xs font-bold">{ABOUT_CONTENT.kicker}</span>
                             <h2
                                 id="about-heading"
                                 className="text-3xl md:text-5xl font-black text-navy-deep tracking-tight"
@@ -109,7 +109,7 @@ export default function AboutSection() {
                                 {ABOUT_CONTENT.fundingLine && (
                                     <div
                                         className={cn(
-                                            "pt-4 border-t border-taupe-gold/30",
+                                            "pt-4 border-t border-coral-warm/30",
                                             isVisible && "fade-in fade-in-delay-4"
                                         )}
                                     >
