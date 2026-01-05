@@ -76,7 +76,7 @@ export default function AboutSection() {
                             <span className="label-uppercase text-taupe-gold tracking-widest text-xs font-bold">{ABOUT_CONTENT.kicker}</span>
                             <h2
                                 id="about-heading"
-                                className="text-4xl md:text-6xl font-black text-navy-deep tracking-tighter"
+                                className="text-3xl md:text-5xl font-black text-navy-deep tracking-tight"
                             >
                                 {ABOUT_CONTENT.heading}
                             </h2>
@@ -89,7 +89,7 @@ export default function AboutSection() {
                                     <p
                                         key={index}
                                         className={cn(
-                                            "text-lg md:text-xl text-slate leading-relaxed font-medium",
+                                            "text-lg md:text-xl text-slate leading-relaxed font-normal",
                                             isVisible && `fade-in fade-in-delay-${index + 1}`
                                         )}
                                     >
@@ -100,7 +100,7 @@ export default function AboutSection() {
                             <div className="space-y-6">
                                 <p
                                     className={cn(
-                                        "text-lg md:text-xl text-slate leading-relaxed font-medium",
+                                        "text-lg md:text-xl text-slate leading-relaxed font-normal",
                                         isVisible && "fade-in fade-in-delay-3"
                                     )}
                                 >

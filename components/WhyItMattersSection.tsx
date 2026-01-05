@@ -73,7 +73,7 @@ export default function WhyItMattersSection() {
                         <h2
                             id="why-heading"
                             className={cn(
-                                "text-4xl md:text-5xl font-black text-navy-deep leading-tight tracking-tighter",
+                                "text-3xl md:text-5xl font-black text-navy-deep leading-tight tracking-tight",
                                 isVisible && "fade-in"
                             )}
                         >
@@ -87,7 +87,7 @@ export default function WhyItMattersSection() {
                     <div className="lg:col-span-8">
                         <p
                             className={cn(
-                                "text-xl md:text-2xl text-slate/90 leading-relaxed font-medium",
+                                "text-lg md:text-xl text-slate/90 leading-relaxed font-normal",
                                 "max-w-3xl",
                                 isVisible && "fade-in fade-in-delay-1"
                             )}

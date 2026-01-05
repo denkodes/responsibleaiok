@@ -526,3 +526,109 @@ a:focus-visible {
 .btn-full {
   width: 100%;
 }
+
+/* ============================================
+   WARM MODERN MICRO-INTERACTIONS
+   ============================================ */
+
+/* Smooth link hover with warm glow */
+a:not(.btn) {
+  transition: color var(--duration-normal) var(--ease-smooth);
+}
+
+a:not(.btn):hover {
+  color: var(--teal-muted);
+}
+
+/* Section heading subtle warm glow on hover */
+h2 {
+  transition: text-shadow var(--duration-slow) var(--ease-smooth);
+}
+
+h2:hover {
+  text-shadow: 0 0 20px rgba(208, 160, 60, 0.15);
+}
+
+/* Card hover: warm lift with subtle glow */
+.glass-card {
+  transition: all var(--duration-slow) var(--ease-spring);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 20px 40px -10px rgba(74, 124, 143, 0.12),
+    0 0 0 1px rgba(208, 160, 60, 0.08),
+    0 0 30px rgba(208, 160, 60, 0.05);
+}
+
+/* Warm accent line animation */
+.label-uppercase {
+  position: relative;
+  display: inline-block;
+}
+
+.label-uppercase::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--taupe-gold), var(--teal-muted));
+  transition: width var(--duration-slow) var(--ease-spring);
+}
+
+.label-uppercase:hover::after {
+  width: 100%;
+}
+
+/* Smooth focus glow - accessibility + aesthetics */
+*:focus-visible {
+  outline: 2px solid var(--taupe-gold);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(208, 160, 60, 0.15);
+  transition: box-shadow var(--duration-fast) var(--ease-smooth);
+}
+
+/* Professional section separator with gradient */
+.section-padding {
+  position: relative;
+}
+
+.section-padding::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(74, 124, 143, 0.15) 25%,
+      rgba(74, 124, 143, 0.15) 75%,
+      transparent);
+  opacity: 0.5;
+}
+
+/* Warm icon pulse on hover */
+svg {
+  transition: all var(--duration-normal) var(--ease-spring);
+}
+
+svg:hover {
+  filter: drop-shadow(0 0 8px rgba(208, 160, 60, 0.3));
+}
+
+/* Subtle text selection */
+::selection {
+  background-color: rgba(208, 160, 60, 0.25);
+  color: var(--navy-deep);
+}
+
+::-moz-selection {
+  background-color: rgba(208, 160, 60, 0.25);
+  color: var(--navy-deep);
+}

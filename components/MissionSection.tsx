@@ -103,15 +103,15 @@ export default function MissionSection() {
                             isVisible && "fade-in fade-in-delay-1"
                         )}>
                             <p
-                                className="text-lg md:text-3xl text-navy-charcoal font-medium leading-[1.6] tracking-tight"
-                                style={{ maxWidth: "30ch", margin: "0 auto" }}
+                                className="text-lg md:text-xl text-navy-charcoal font-normal leading-relaxed tracking-normal"
+                                style={{ maxWidth: "32ch", margin: "0 auto" }}
                             >
                                 {MISSION_CONTENT.statement}
                             </p>
                             {MISSION_CONTENT.supportLine && (
                                 <p
-                                    className="text-base md:text-xl text-slate/80 font-normal mt-6 italic"
-                                    style={{ maxWidth: "30ch", margin: "1.5rem auto 0" }}
+                                    className="text-base md:text-lg text-slate/80 font-normal mt-6 italic"
+                                    style={{ maxWidth: "32ch", margin: "1.5rem auto 0" }}
                                 >
                                     {MISSION_CONTENT.supportLine}
                                 </p>
