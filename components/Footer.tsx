@@ -19,7 +19,7 @@ import { FOOTER_CONTENT } from "@/lib/constants";
 const SocialIcons = {
     linkedin: (
         <svg
-            className="w-5 h-5"
+            className="w-6 h-6"
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"
@@ -29,7 +29,7 @@ const SocialIcons = {
     ),
     twitter: (
         <svg
-            className="w-5 h-5"
+            className="w-6 h-6"
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"
@@ -71,10 +71,10 @@ export default function Footer() {
                     <div className="md:col-span-3 md:col-start-7 space-y-8">
                         <h4 className="text-sm font-bold uppercase tracking-widest text-teal-muted">Menu</h4>
                         <nav className="flex flex-col space-y-4">
-                            <a href="#home" className="text-lg text-slate-300 hover:text-white transition-colors duration-300 w-fit">Home</a>
-                            <a href="#mission" className="text-lg text-slate-300 hover:text-white transition-colors duration-300 w-fit">Mission</a>
-                            <a href="#activities" className="text-lg text-slate-300 hover:text-white transition-colors duration-300 w-fit">Activities</a>
-                            <a href="#about" className="text-lg text-slate-300 hover:text-white transition-colors duration-300 w-fit">About</a>
+                            <a href="#home" className="text-xl text-slate-300 hover:text-white transition-colors duration-300 w-fit">Home</a>
+                            <a href="#mission" className="text-xl text-slate-300 hover:text-white transition-colors duration-300 w-fit">Mission</a>
+                            <a href="#activities" className="text-xl text-slate-300 hover:text-white transition-colors duration-300 w-fit">Activities</a>
+                            <a href="#about" className="text-xl text-slate-300 hover:text-white transition-colors duration-300 w-fit">About</a>
                         </nav>
                     </div>
 
@@ -84,7 +84,7 @@ export default function Footer() {
                         <div className="space-y-4">
                             <a
                                 href={`mailto:${FOOTER_CONTENT.contactEmail}`}
-                                className="block text-lg text-slate-300 hover:text-white transition-colors duration-300"
+                                className="block text-xl text-slate-300 hover:text-white transition-colors duration-300"
                             >
                                 {FOOTER_CONTENT.contactEmail}
                             </a>
@@ -94,7 +94,7 @@ export default function Footer() {
                                     <a
                                         key={social.platform}
                                         href={social.url}
-                                        className="w-12 h-12 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors border border-white/10 text-white"
+                                        className="w-14 h-14 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors border border-white/10 text-white"
                                         aria-label={`Follow us on ${social.platform}`}
                                         target="_blank"
                                         rel="noopener noreferrer"

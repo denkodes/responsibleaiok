@@ -218,10 +218,13 @@ export default function GetInvolvedSection() {
                             {GET_INVOLVED_CONTENT.heading}
                         </h2>
                         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-                            <p className="text-lg md:text-xl font-bold text-teal-muted/80 uppercase tracking-widest">
+                            <p className="text-xl md:text-2xl font-bold text-teal-muted/90 uppercase tracking-widest">
                                 {GET_INVOLVED_CONTENT.subheading}
                             </p>
                         </div>
+                        <p className="text-xl md:text-2xl text-slate text-center max-w-3xl mx-auto leading-relaxed pt-6">
+                            We're almost there. Be part of the conversation.
+                        </p>
                     </div>
 
                     {/* ============================================
@@ -296,7 +299,7 @@ export default function GetInvolvedSection() {
                         <form
                             onSubmit={handleSubmit}
                             className={cn(
-                                "space-y-6",
+                                "space-y-8", /* Increased spacing between fields */
                                 isVisible && "fade-in fade-in-delay-1"
                             )}
                             noValidate
@@ -322,7 +325,7 @@ export default function GetInvolvedSection() {
                                         GET_INVOLVED_CONTENT.form.fields.firstName.placeholder
                                     }
                                     className={cn(
-                                        "w-full px-4 py-3 rounded-lg border",
+                                        "w-full px-6 py-4 rounded-xl border text-lg", /* Larger input, rounded-xl for softer feel */
                                         "bg-white text-navy-charcoal",
                                         "transition-colors duration-200",
                                         "focus:outline-none focus:ring-2 focus:ring-teal-muted",
@@ -368,7 +371,7 @@ export default function GetInvolvedSection() {
                                         GET_INVOLVED_CONTENT.form.fields.email.placeholder
                                     }
                                     className={cn(
-                                        "w-full px-4 py-3 rounded-lg border",
+                                        "w-full px-6 py-4 rounded-xl border text-lg",
                                         "bg-white text-navy-charcoal",
                                         "transition-colors duration-200",
                                         "focus:outline-none focus:ring-2 focus:ring-teal-muted",
@@ -408,7 +411,7 @@ export default function GetInvolvedSection() {
                                     placeholder={
                                         GET_INVOLVED_CONTENT.form.fields.organization.placeholder
                                     }
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-border hover:border-teal-muted bg-white text-navy-charcoal transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-teal-muted"
+                                    className="w-full px-6 py-4 rounded-xl border border-gray-border hover:border-teal-muted bg-white text-navy-charcoal text-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-teal-muted"
                                 />
                             </div>
 
@@ -425,7 +428,7 @@ export default function GetInvolvedSection() {
                                     name="interest"
                                     value={formData.interest}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-border hover:border-teal-muted bg-white text-navy-charcoal transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-teal-muted"
+                                    className="w-full px-6 py-4 rounded-xl border border-gray-border hover:border-teal-muted bg-white text-navy-charcoal text-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-teal-muted"
                                 >
                                     {GET_INVOLVED_CONTENT.form.fields.interest.options?.map(
                                         (option) => (
@@ -442,7 +445,7 @@ export default function GetInvolvedSection() {
                                 type="submit"
                                 disabled={isSubmitting}
                                 className={cn(
-                                    "btn btn-primary btn-full",
+                                    "btn btn-primary btn-full text-xl py-5", /* Larger button text and padding */
                                     "disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                                 )}
                             >
