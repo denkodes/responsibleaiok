@@ -1,0 +1,21 @@
+# Project Tasks: Responsible AI OK Website
+
+- [x] **Project Setup**: Initialize Next.js, Tailwind v4, and directory structure.
+- [x] **Design System**: Implement Swiss-inspired minimal luxury `globals.css` (variables, typography, spacing).
+- [x] **Core Components**:
+    - [x] Navigation (Glassmorphism, mobile menu)
+    - [x] Hero (Animated gradients, noise texture, high-impact typography)
+    - [x] Mission (High-readability layout)
+    - [x] Activities (Asymmetric 12-column grid, polished cards)
+    - [x] Why It Matters (Impact narrative)
+    - [x] About (Credibility background)
+    - [x] Get Involved (HubSpot integration placeholder)
+    - [x] Footer (Massive "site-ender" typography)
+- [x] **Content**: Centralize all text in `lib/constants.ts`.
+- [x] **Functionality**:
+    - [x] Smooth scrolling
+    - [x] Scroll-triggered animations (`IntersectionObserver`)
+    - [x] Accessibility checks (Reduced motion, ARIA labels)
+- [x] **Modernization**: Apply fluid blob animations and premium textures.
+- [x] **Documentation**: Create comprehensive `README.md`.
+- [x] **Verification**: Build and visual check.

@@ -1,26 +1,496 @@
 @import "tailwindcss";
 
+/**
+ * RESPONSIBLE AI OK - DESIGN SYSTEM
+ * Swiss-inspired minimal luxury aesthetic
+ * 
+ * Design Principles:
+ * - Typography-first hierarchy
+ * - Generous whitespace as design material
+ * - Restrained, professional color palette
+ * - Subtle, high-quality effects
+ * - Performance-conscious animations
+ */
+
+/* ============================================
+   COLOR PALETTE - Minimal Luxury
+   ============================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Colors - Deep, sophisticated navy anchors professionalism */
+  --navy-deep: #112A46;
+  --navy-charcoal: #1E293B;
+  --slate: #334155;
+
+  /* Accent - Muted teal for tech credibility without loudness */
+  --teal-muted: #4A7C8F;
+  --teal-light: #06B6D4;
+
+  /* Warm Accent - Taupe gold for CTAs (luxury, not startup) */
+  --taupe-gold: #D0A03C;
+  --taupe-light: #E5B962;
+
+  /* Neutrals - Clean backgrounds and text */
+  --off-white: #FAF9F6;
+  --gray-light: #F1F5F9;
+  --gray-border: #E2E8F0;
+
+  /* Semantic Colors */
+  --background: var(--off-white);
+  --foreground: var(--slate);
+  --heading: var(--navy-deep);
+  --accent: var(--teal-muted);
+  --cta: var(--taupe-gold);
+
+  /* Premium UI Accents */
+  --glass-border: rgba(15, 23, 42, 0.05);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glow-teal: rgba(6, 182, 212, 0.15);
+  --glow-gold: rgba(167, 129, 102, 0.1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ============================================
+   TYPOGRAPHY SCALE - Swiss Precision
+   ============================================ */
+:root {
+  /* Fluid typography using clamp() - responsive without breakpoints */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.825rem + 0.25vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 2rem);
+  --text-3xl: clamp(2rem, 1.75rem + 1.25vw, 3rem);
+  --text-4xl: clamp(2.5rem, 2rem + 2.5vw, 4rem);
+  --text-5xl: clamp(3rem, 2.5rem + 2.5vw, 5rem);
+
+  /* Line Heights - Generous for readability */
+  --leading-tight: 1.2;
+  --leading-snug: 1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+  --leading-loose: 1.8;
+
+  /* Letter Spacing - Swiss micro-typography refined */
+  --tracking-tight: -0.04em;
+  /* Tightened for high-impact headings */
+  --tracking-normal: -0.01em;
+  /* Slight tightening for better readability */
+  --tracking-wide: 0.02em;
+  --tracking-wider: 0.08em;
+  /* Expanded for labels */
+
+  /* Surface Roles */
+  --surface-primary: var(--off-white);
+  --surface-secondary: var(--gray-light);
+  --border-subtle: rgba(15, 23, 42, 0.08);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ============================================
+   SPACING SYSTEM - Luxury Padding
+   ============================================ */
+:root {
+  /* Base 4px grid */
+  --space-1: 0.25rem;
+  /* 4px */
+  --space-2: 0.5rem;
+  /* 8px */
+  --space-3: 0.75rem;
+  /* 12px */
+  --space-4: 1rem;
+  /* 16px */
+  --space-6: 1.5rem;
+  /* 24px */
+  --space-8: 2rem;
+  /* 32px */
+  --space-12: 3rem;
+  /* 48px */
+  --space-16: 4rem;
+  /* 64px */
+  --space-20: 5rem;
+  /* 80px */
+  --space-24: 6rem;
+  /* 96px */
+  --space-32: 8rem;
+  /* 120px - generous section padding */
+
+  /* Content Width Constraints */
+  --content-narrow: 42ch;
+  /* Optimal readability for paragraphs */
+  --content-medium: 60ch;
+  --content-wide: 75ch;
+  --container-max: 1200px;
+  --container-gutter: 5rem;
+  /* 80px side gutters */
+}
+
+/* ============================================
+   SHADOW SYSTEM - Soft, Navy-Tinted
+   ============================================ */
+:root {
+  /* Multi-layer shadows for "Floating" effect */
+  --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.02);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.03),
+    0 1px 3px rgba(15, 23, 42, 0.02);
+  --shadow-lg: 0 12px 24px rgba(15, 23, 42, 0.04),
+    0 4px 8px rgba(15, 23, 42, 0.02);
+  --shadow-xl: 0 24px 48px rgba(15, 23, 42, 0.06),
+    0 8px 16px rgba(15, 23, 42, 0.03);
+  --shadow-glass: 0 8px 32px 0 rgba(15, 23, 42, 0.08);
+
+  /* Hover state - premium lift */
+  --shadow-hover: 0 32px 64px rgba(15, 23, 42, 0.12),
+    0 8px 16px rgba(15, 23, 42, 0.04);
+}
+
+/* ============================================
+   BORDER GRADIENTS - Subtle Detail
+   ============================================ */
+:root {
+  /* Top-to-bottom lightness variation for card borders */
+  --border-gradient: linear-gradient(to bottom,
+      rgba(226, 232, 240, 0.6),
+      rgba(226, 232, 240, 1));
+}
+
+/* ============================================
+   ANIMATION UTILITIES - Subtle & Purposeful
+   ============================================ */
+:root {
+  /* Easing curves - smooth, not bouncy */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+
+  /* Animation durations */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 350ms;
+}
+
+/* Fade-in animation for scroll-triggered elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
   }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle lift on hover */
+@keyframes lift {
+  to {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(50px, -70px) scale(1.15);
+  }
+
+  66% {
+    transform: translate(-40px, 30px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(100% 0 0 0);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.animate-reveal {
+  animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-blob {
+  animation: blob 15s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Respect user's motion preferences - ACCESSIBILITY FIRST */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Smooth scroll behavior (respects reduced-motion above) */
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  overflow-x: hidden;
+}
+
+/* ============================================
+   TYPOGRAPHY DEFAULTS - Swiss Hierarchy
+   ============================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading);
+  font-family: var(--font-inter-display), var(--font-inter), sans-serif;
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+h1 {
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+}
+
+h2 {
+  font-size: var(--text-3xl);
+  line-height: var(--leading-snug);
+}
+
+h3 {
+  font-size: var(--text-2xl);
+}
+
+h4 {
+  font-size: var(--text-xl);
+}
+
+p {
+  margin-bottom: 1em;
+  max-width: var(--content-wide);
+}
+
+/* Swiss micro-typography: uppercase labels */
+.label-uppercase {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Em-dash dividers (Swiss detail) */
+.em-dash::before {
+  content: "—";
+  margin-right: 0.5em;
+  color: var(--accent);
+}
+
+/* ============================================
+   FOCUS STATES - High Contrast Accessibility
+   ============================================ */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--cta);
+  outline-offset: 4px;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Container with max-width and gutters */
+.container-custom {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .container-custom {
+    padding-left: var(--container-gutter);
+    padding-right: var(--container-gutter);
+  }
+}
+
+/* Section padding - generous breathing room */
+.section-padding {
+  padding-top: var(--space-20);
+  padding-bottom: var(--space-20);
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: var(--space-32);
+    padding-bottom: var(--space-32);
+  }
+}
+
+/* Fade-in animation class (triggered by Intersection Observer) */
+.fade-in {
+  animation: fadeIn var(--duration-slow) var(--ease-smooth) forwards;
+  opacity: 0;
+}
+
+/* Stagger delays for sequential animations */
+.fade-in-delay-1 {
+  animation-delay: 100ms;
+}
+
+.fade-in-delay-2 {
+  animation-delay: 200ms;
+}
+
+.fade-in-delay-3 {
+  animation-delay: 300ms;
+}
+
+.fade-in-delay-4 {
+  animation-delay: 400ms;
+}
+
+/* Card base styles - minimal, clean */
+.card-base {
+  background: var(--gray-light);
+  border: 1px solid var(--gray-border);
+  border-radius: 8px;
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+  transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.card-base:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .card-base {
+    padding: var(--space-12);
+  }
+}
+
+/* Frosted glass effect (premium) */
+.glass-nav {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+/* ============================================
+   TAILWIND THEME INTEGRATION
+   ============================================ 
+   @theme block removed to fix lint error and ensure CSS parsing.
+   Variables are available via :root.
+*/
+
+/* ============================================
+   COMPONENT CLASSES (PREMIUM BUTTONS)
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2.5rem;
+  /* Spacious but not huge */
+  border-radius: 9999px;
+  /* Pill shape */
+  font-weight: 600;
+  font-family: var(--font-inter);
+  font-size: var(--text-base);
+  letter-spacing: var(--tracking-wide);
+  transition: all var(--duration-normal) var(--ease-smooth);
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-primary {
+  background-color: var(--cta);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--taupe-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--heading);
+  border-color: rgba(15, 23, 42, 0.15);
+}
+
+.btn-secondary:hover {
+  background-color: #FFFFFF;
+  border-color: var(--heading);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-full {
+  width: 100%;
 }
