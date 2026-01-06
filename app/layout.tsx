@@ -128,23 +128,14 @@ export const metadata: Metadata = {
   //   google: 'your-google-verification-code',
   // },
 
-  // App icons and favicons
-  icons: {
-    icon: [
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    other: [
-      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#0F172A" },
-    ],
-  },
+  // Icons are automatically generated from app/icon.png and app/apple-icon.png
+  // Open Graph images are automatically generated from app/opengraph-image.png
 
   // Manifest for PWA (if needed in future)
   manifest: "/site.webmanifest",
 };
+
+
 
 export const viewport = {
   themeColor: "#0F172A",
