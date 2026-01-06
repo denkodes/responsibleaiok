@@ -13,6 +13,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SITE_METADATA, ORG_INFO } from "@/lib/constants";
+import NoiseOverlay from "@/components/NoiseOverlay";
 
 /* ============================================
    FONT CONFIGURATION
@@ -263,6 +264,9 @@ export default function RootLayout({
         className={`${inter.variable} ${interDisplay.variable} antialiased`}
         suppressHydrationWarning
       >
+        {/* Subtle paper grain texture for premium feel */}
+        <NoiseOverlay />
+
         {/* 
           Main content wrapper
           suppressHydrationWarning prevents console warnings from

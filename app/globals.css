@@ -14,9 +14,12 @@
 :root {
   /* --- COLOR PALETTE: Deep Institutional --- */
 
-  --bg-page: #ffffff;
-  --bg-surface: #f8fafc;
-  --bg-surface-highlight: #f1f5f9;
+  --bg-page: #fafaf9;
+  /* Warm stone white (was pure white) */
+  --bg-surface: #f9f8f6;
+  /* Warm stone surface (was cool gray) */
+  --bg-surface-highlight: #f3f1ed;
+  /* Warm stone highlight */
 
   /* Text */
   --text-primary: #0f172a;
@@ -77,7 +80,11 @@
 /* Base Reset */
 html {
   scroll-behavior: smooth;
+  /* Premium typography rendering */
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -196,7 +203,8 @@ p {
   padding: 1rem 2.5rem;
   font-weight: 700;
   font-size: 1rem;
-  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Slower for luxury feel */
   border-radius: var(--radius-sharp);
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -247,7 +255,8 @@ p {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sharp);
   padding: var(--space-lg);
-  transition: all 0.2s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Slower for luxury feel */
   box-shadow: 0 0 0 rgba(8, 145, 178, 0);
 }
 
