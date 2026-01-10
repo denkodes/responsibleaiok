@@ -9,6 +9,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { NAV_LINKS, ORG_INFO } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -25,9 +26,25 @@ export default function Navigation() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const pathname = usePathname();
+
     const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        // If the link is not an anchor link (does not contain #), let Next.js handle it
+        if (!href.includes('#')) {
+            setIsMobileMenuOpen(false);
+            return;
+        }
+
+        // If we are not on the home page and the link is for the home page sections,
+        // let Next.js handle the navigation to the home page
+        if (pathname !== "/" && href.startsWith("/#")) {
+            setIsMobileMenuOpen(false);
+            return;
+        }
+
+        // If we are on the page, prevent default and scroll smoothly
         e.preventDefault();
-        const targetId = href.replace("#", "");
+        const targetId = href.replace(/^\/#/, "").replace(/^#/, "");
         const el = document.getElementById(targetId);
         if (el) {
             const navHeight = 80;

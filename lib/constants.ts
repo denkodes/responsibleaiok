@@ -30,11 +30,12 @@ export const ORG_INFO = {
    NAVIGATION LINKS
    ============================================ */
 export const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Mission", href: "#mission" },
-  { label: "Activities", href: "#activities" },
-  { label: "Why It Matters", href: "#why-it-matters" },
-  { label: "About", href: "#about" },
+  { label: "Home", href: "/#home" },
+  { label: "Blog", href: "/blog" },
+  { label: "Mission", href: "/#mission" },
+  { label: "Activities", href: "/#activities" },
+  { label: "Why It Matters", href: "/#why-it-matters" },
+  { label: "About", href: "/#about" },
 ] as const;
 
 /* ============================================

@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 1,
         },
+        {
+            url: `${SITE_METADATA.url}/blog`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
+        },
         // Future routes will be added here
     ];
 }

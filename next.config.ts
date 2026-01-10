@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: https: blob: https://static.hsappstatic.net",
               "connect-src 'self' https://forms.hsforms.com https://api.hsforms.com https://www.google-analytics.com",
-              "frame-src https://forms.hsforms.com https://js-na2.hsforms.net http://js-na2.hsforms.net",
+              "frame-src https://forms.hsforms.com https://js-na2.hsforms.net http://js-na2.hsforms.net https://responsibleaiok.substack.com https://substack.com",
             ].join("; "),
           },
           {
